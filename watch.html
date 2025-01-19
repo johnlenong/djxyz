@@ -86,6 +86,35 @@
             text-decoration: underline;
         }
 
+        .prevnext {
+            width: 100%;
+            height: 50px;
+            background: #4c4c4c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            color: white;
+            font-size: 16px;
+        }
+        .prevnext a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: white;
+            text-decoration: none;
+        }
+        .prevnext .current-page {
+            color: white;
+            font-weight: bold;
+        }
+        .prevnext a:hover {
+            background-color: #6c6c6c;
+        }
+	    
         .container {
             display: flex;
             flex-direction: column;
@@ -293,6 +322,36 @@
 				vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
 				
 			}
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const prevNextContainer = document.querySelector(".prevnext");
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentPage = parseInt(urlParams.get("p"));
+            const totalPages = video.length+1;
+            let htmlContent = "";
+
+            if (currentPage) {
+                if (currentPage > 1) {
+                    htmlContent += `<a href="?p=${currentPage - 1}" class="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>`;
+                } else {
+                    htmlContent += `<span></span>`;
+                }
+
+                htmlContent += `<span class="current-page">Page ${currentPage}</span>`;
+
+                if (currentPage < totalPages) {
+                    htmlContent += `<a href="?p=${currentPage + 1}" class="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>`;
+                } else {
+                    htmlContent += `<span></span>`;
+                }
+
+                prevNextContainer.innerHTML = htmlContent;
+            }
+        });
 
 			
 		});
