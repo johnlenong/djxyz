@@ -200,6 +200,14 @@
 		code.innerHTML = `${vValue} : ${part}`;
 		desc.innerHTML = `<h3>Part ${part}</h3><p></p>`;
 	}
+	if (vValue) {
+		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+vValue+'.json', function(data) {
+			const url = data.alp.o;
+    			const title = data.alp.t; console.log("Title:", title);
+    			const actor = data.alp.a[0]; 
+		});
+
+	}
 </script>
 
 </body>
