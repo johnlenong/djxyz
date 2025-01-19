@@ -343,7 +343,7 @@
                 htmlContent += `<span class="current-page">Part ${currentPage}</span>`;
 
                 if (currentPage < totalPages) {
-                    htmlContent += `<a href="?p=${(currentPage + 1)}" class="next">
+                    htmlContent += `<a href="?p=${currentPage++1}" class="next">
                         <i class="fas fa-chevron-right"></i>
                     </a>`;
                 } else {
