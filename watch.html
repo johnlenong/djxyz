@@ -332,12 +332,9 @@
 		                    htmlContent += `<span class="current-page">Part ${part}</span>`;
 		                    if (part < totalPages) { htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`; } else { htmlContent += `<span></span>`; }
 		                prevNextContainer.innerHTML = htmlContent;
-				if (part == 0) {
+				if (part == 0 || part > totalPages) {
 				    window.location=`watch?v=${idcd}`;
 				}    
-				if (part > totalPages) {
-				    console.log(part+' LEBIH DARI '+totalPages);
-				}
 			}
 		});
 	}
