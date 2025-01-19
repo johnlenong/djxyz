@@ -113,13 +113,17 @@
             padding: 10px;
             border-radius: 8px;
             margin-top: 20px;
-	    max-height:315px;
-	    overflow-y:scroll;
+	    max-height:400px;
         }
 
         .sidebar h3 {
             margin-top: 0;
         }
+
+	.sidebar .lists {
+	    max-height:400px;			
+	    overflow-y:scroll;
+	}    
 
 	#partList {
     	    list-style: none;
@@ -189,12 +193,14 @@
     </div>
     <div class="sidebar">
         <h3>Other Parts</h3>
+	<div class="lists">    
         <ul>
             <li><a href="#" style="color: white; text-decoration: none;">Video 1</a></li>
             <li><a href="#" style="color: white; text-decoration: none;">Video 2</a></li>
             <li><a href="#" style="color: white; text-decoration: none;">Video 3</a></li>
             <li><a href="#" style="color: white; text-decoration: none;">Video 4</a></li>
         </ul>
+	</div>
     </div>
 </div>
 
