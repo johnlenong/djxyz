@@ -296,6 +296,7 @@
 
 	if (vValue) {
 		var idcd = `${vValue.toUpperCase().split('#')[0]}`;
+		var prevNextContainer = document.querySelector(".prevnext");
 		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+idcd+'.json', function(data) {
 			const url = data.alp.o;
     			const title = data.alp.t;
@@ -303,6 +304,7 @@
     			const genre = data.alp.c.join(', '); 
 			const pictr = data.alp.p;
 			const video = data.alp.v;
+			
 
 			code.innerHTML = `${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
@@ -318,52 +320,38 @@
     				playButton.addEventListener('click', () => {
       					window.location='/watch?v='+idcd+'&p=1';
     				});
+				prevNextContainer.style.display = 'none';
 			} else {
 				var numbr = `${part.toUpperCase().split('#')[0]}`;
 				vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
-				
+			        var currentPage = part; 
+			        var nextzPages = ++currentPage;
+			        var totalPages = video.length; 
+			        let htmlContent = "";
+				if (part > 1) {
+		                    htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev">
+		                        <i class="fas fa-chevron-left"></i>
+		                    </a>`;
+		                } else {
+		                    htmlContent += `<span></span>`;
+		                }
+		
+		                htmlContent += `<span class="current-page">Part ${part}</span>`;
+		
+		                if (part < totalPages) {
+		                    htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next">
+		                        <i class="fas fa-chevron-right"></i>
+		                    </a>`;
+		                } else {
+		                    htmlContent += `<span></span>`;
+		                }
+		
+				if (part == 0) {
+				    window.location=`watch?v=${idcd}`;
+				}    
+		                prevNextContainer.innerHTML = htmlContent;
 			}
-
-        
-            const prevNextContainer = document.querySelector(".prevnext");
-            
-            var currentPage = part; console.log('CURRENT PAGE : '+currentPage);
-	    var nextzPages = ++currentPage;
-            var totalPages = video.length; console.log('TOTAL PAGE : '+totalPages);
-            let htmlContent = "";
-
-            if (part) {
-                if (part > 1) {
-                    htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </a>`;
-                } else {
-                    htmlContent += `<span></span>`;
-                }
-
-                htmlContent += `<span class="current-page">Part ${part}</span>`;
-
-                if (part < totalPages) {
-                    htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next">
-                        <i class="fas fa-chevron-right"></i>
-                    </a>`;
-                } else {
-                    htmlContent += `<span></span>`;
-                }
-
-		if (part == 0) {
-		    window.location=`watch?v=${idcd}`;
-		}    
-
-                prevNextContainer.innerHTML = htmlContent;
-            } else {
-		prevNextContainer.style.display = 'none';
-	    }
-        
-
-			
 		});
-
 	}
 </script>
 
