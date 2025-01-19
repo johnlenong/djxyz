@@ -328,24 +328,16 @@
 			        var nextzPages = ++currentPage;
 			        var totalPages = video.length; 
 			        let htmlContent = "";
-				if (part > 1) {
-		                    htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`;
-		                } else {
-		                    htmlContent += `<span></span>`;
-		                }
-		
+				    if (part > 1) { htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`; } else { htmlContent += `<span></span>`; }
 		                    htmlContent += `<span class="current-page">Part ${part}</span>`;
-		
-		                if (part < totalPages) {
-		                    htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`;
-		                } else {
-		                    htmlContent += `<span></span>`;
-		                }
-		
+		                    if (part < totalPages) { htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`; } else { htmlContent += `<span></span>`; }
+		                prevNextContainer.innerHTML = htmlContent;
 				if (part == 0) {
 				    window.location=`watch?v=${idcd}`;
 				}    
-		                prevNextContainer.innerHTML = htmlContent;
+				if (part == totalPages) {
+				    console.log('PART AKHIR');
+				}
 			}
 		});
 	}
