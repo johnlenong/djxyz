@@ -229,7 +229,7 @@
 	if (vValue) {
 		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+vValue+'.json', function(data) {
 			const url = data.alp.o;
-    			const title = data.alp.t; console.log("Title:", title);
+    			const title = data.alp.t;
     			const actor = data.alp.a.join(', '); 
     			const genre = data.alp.c.join(', '); 
 
@@ -240,7 +240,7 @@
 			for (let i = 1; i < data.alp.p.length; i++) {
                 		$('#partList').append('<li><a href="/watch?v='+vValue+'&p='+i+'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE'+data.alp.p[i]+'/w360-h210-c-rw/thumb.webp" />Part ' + i + '</a></li>');
             		}
-
+			if (!part) {console.log('tidak ada part');}
 
 			
 		});
