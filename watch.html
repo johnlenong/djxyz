@@ -196,16 +196,26 @@
     }
     var part = getParameterByName('p');
     var code = document.querySelector('.logo');
+    var side = document.querySelector('.sidebar');
     var desc = document.querySelector('.video-description');
-	if (part) {
-		code.innerHTML = `${vValue} : ${part}`;
-		desc.innerHTML = `<h3>Part ${part}</h3><p></p>`;
-	}
+
 	if (vValue) {
 		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+vValue+'.json', function(data) {
 			const url = data.alp.o;
     			const title = data.alp.t; console.log("Title:", title);
-    			const actor = data.alp.a[0]; 
+    			const actor = data.alp.a.join(', '); 
+    			const genre = data.alp.c.join(', '); 
+
+			code.innerHTML = `${vValue}`;
+			side.innerHTML = `<h3></h3><ul id="actorsList"></ul>`;
+			desc.innerHTML = `<h3>${title}Part ${part}</h3><p>${actor} : ${genre}</p>`;
+
+			for (let i = 0; i < data.alp.v.length; i++) {
+                		$('#actorsList').append('<li>' + data.alp.v[i] + '</li>');
+            		}
+
+
+			
 		});
 
 	}
