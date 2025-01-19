@@ -98,6 +98,7 @@
             padding: 10px;
             border-radius: 8px;
             overflow: hidden;
+	    position: relative;
         }
 
         .video-player iframe {
@@ -279,6 +280,10 @@
 			
 			if (!part) {
 				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${data.alp.p[0]}/s1600-rw/thumb.webp" alt="Background Image" /><button class="play-button" id="playButton">▶</button>`;
+				const playButton = document.getElementById('playButton');
+    				playButton.addEventListener('click', () => {
+      					window.location='/watch?v='+vValue+'&p=1';
+    				});
 			}
 
 			
