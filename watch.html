@@ -336,6 +336,10 @@
 				    window.location=`watch?v=${idcd}`;
 				}    
 			}
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+    			console.error("Request failed:", textStatus, errorThrown);
+    			alert("An error occurred: " + textStatus);
 		});
 	}
 </script>
