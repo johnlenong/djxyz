@@ -194,7 +194,7 @@
     function openSearchPage() {
         window.location.href = '/search';
     }
-    var part = getParameterByName('p');
+    var part = getParameterByName('p'); if (part) {pnum = `<p>Part ${part}</p>`} else {pnum = ``}
     var code = document.querySelector('.logo');
     var side = document.querySelector('.sidebar');
     var desc = document.querySelector('.video-description');
@@ -208,7 +208,7 @@
 
 			code.innerHTML = `${vValue}`;
 			side.innerHTML = `<h3></h3><ul id="actorsList"></ul>`;
-			desc.innerHTML = `<h3>${title}Part ${part}</h3><p>${actor} : ${genre}</p>`;
+			desc.innerHTML = `<h3>${title}</h3>${pnum}<p>${actor} : ${genre}</p>`;
 
 			for (let i = 0; i < data.alp.v.length; i++) {
                 		$('#actorsList').append('<li>' + data.alp.v[i] + '</li>');
