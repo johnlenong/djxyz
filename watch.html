@@ -252,14 +252,19 @@
     function openSearchPage() {
         window.location.href = '/search';
     }
-    var part = getParameterByName('p'); if (part) {pnum = `<p>Part ${part}</p>`} else {pnum = ``}
+    var part = getParameterByName('p').toUpperCase().split('#')[0]; 
+	if (part) {
+		pnum = `<p>Part ${part}</p>`
+	} else {
+		pnum = ``
+	}
     var code = document.querySelector('.logo');
     var side = document.querySelector('.lists');    
     var vply = document.querySelector('.video-player');
     var desc = document.querySelector('.video-description');
 
 	if (vValue) {
-		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+vValue+'.json', function(data) {
+		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+vValue.toUpperCase().split('#')[0]+'.json', function(data) {
 			const url = data.alp.o;
     			const title = data.alp.t;
     			const actor = data.alp.a.join(', '); 
