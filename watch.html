@@ -334,14 +334,14 @@
 
             if (currentPage) {
                 if (currentPage > 1) {
-                    htmlContent += `<a href="?p=${currentPage - 1}" class="prev">
+                    htmlContent += `<a href="?p=${part - 1}" class="prev">
                         <i class="fas fa-chevron-left"></i>
                     </a>`;
                 } else {
                     htmlContent += `<span></span>`;
                 }
 
-                htmlContent += `<span class="current-page">Part ${currentPage}</span>`;
+                htmlContent += `<span class="current-page">Part ${part}</span>`;
 
                 if (currentPage < totalPages) {
                     htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next">
