@@ -351,8 +351,9 @@
                     htmlContent += `<span></span>`;
                 }
 
-		if (part == 0 || part > totalPages) {
+		if (part == 0) {
 		    prevNextContainer.innerHTML = '';
+		    window.location=`watch?v=${idcd}`;
 		}    
 
                 prevNextContainer.innerHTML = htmlContent;
