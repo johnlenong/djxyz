@@ -252,9 +252,9 @@
     function openSearchPage() {
         window.location.href = '/search';
     }
-    var part = getParameterByName('p').toUpperCase().split('#')[0]; 
+    var part = getParameterByName('p'); 
 	if (part) {
-		pnum = `<p>Part ${part}</p>`
+		pnum = `<p>Part ${part.toUpperCase().split('#')[0]}</p>`
 	} else {
 		pnum = ``
 	}
