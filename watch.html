@@ -333,8 +333,8 @@
             let htmlContent = "";
 
             if (currentPage) {
-                if (currentPage > 1) {
-                    htmlContent += `<a href="?p=${part - 1}" class="prev">
+                if (part > 1) {
+                    htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev">
                         <i class="fas fa-chevron-left"></i>
                     </a>`;
                 } else {
