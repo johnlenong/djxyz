@@ -193,6 +193,9 @@
     function openSearchPage() {
         window.location.href = '/search';
     }
+    var part = getParameterByName('p');
+    var desc = document.querySelector('.video-description');
+	desc.innerHTML = `<h3>Part ${part}</h3><p></p>`;
 </script>
 
 </body>
