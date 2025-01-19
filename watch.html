@@ -328,6 +328,7 @@
             const prevNextContainer = document.querySelector(".prevnext");
             
             const currentPage = part;
+	    const nextzPages = currentPage++'1';
             const totalPages = video.length+1;
             let htmlContent = "";
 
@@ -343,7 +344,7 @@
                 htmlContent += `<span class="current-page">Part ${currentPage}</span>`;
 
                 if (currentPage < totalPages) {
-                    htmlContent += `<a href="?p=${currentPage++1}" class="next">
+                    htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next">
                         <i class="fas fa-chevron-right"></i>
                     </a>`;
                 } else {
