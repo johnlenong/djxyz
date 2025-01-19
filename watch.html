@@ -222,7 +222,7 @@
     }
     var part = getParameterByName('p'); if (part) {pnum = `<p>Part ${part}</p>`} else {pnum = ``}
     var code = document.querySelector('.logo');
-    var side = document.querySelector('.sidebar');
+    var side = document.querySelector('.lists');
     var desc = document.querySelector('.video-description');
 
 	if (vValue) {
@@ -233,7 +233,7 @@
     			const genre = data.alp.c.join(', '); 
 
 			code.innerHTML = `${vValue}`;
-			side.innerHTML = `<h3>Other Parts</h3><ul id="partList"></ul>`;
+			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `<h3>${title}</h3>${pnum}<p>Actress: ${actor}</p><p>Category: ${genre}</p>`;
 
 			for (let i = 1; i < data.alp.p.length; i++) {
