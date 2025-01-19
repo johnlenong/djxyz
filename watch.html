@@ -157,7 +157,7 @@
 
 <div id="menuOverlay" class="menu-overlay">
     <a href="/">Home</a>
-    <a href="/about">Actress</a>
+    <a href="/actress">Actress</a>
     <a href="/category">Category</a>
     <a href="#" onclick="toggleMenu()">Close</a>
 </div>
@@ -194,8 +194,12 @@
         window.location.href = '/search';
     }
     var part = getParameterByName('p');
+    var code = document.querySelector('.logo');
     var desc = document.querySelector('.video-description');
-	desc.innerHTML = `<h3>Part ${part}</h3><p></p>`;
+	if (part) {
+		code.innerHTML = `${vValue} : ${part}`;
+		desc.innerHTML = `<h3>Part ${part}</h3><p></p>`;
+	}
 </script>
 
 </body>
