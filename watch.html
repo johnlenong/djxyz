@@ -329,19 +329,15 @@
 			        var totalPages = video.length; 
 			        let htmlContent = "";
 				if (part > 1) {
-		                    htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev">
-		                        <i class="fas fa-chevron-left"></i>
-		                    </a>`;
+		                    htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`;
 		                } else {
 		                    htmlContent += `<span></span>`;
 		                }
 		
-		                htmlContent += `<span class="current-page">Part ${part}</span>`;
+		                    htmlContent += `<span class="current-page">Part ${part}</span>`;
 		
 		                if (part < totalPages) {
-		                    htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next">
-		                        <i class="fas fa-chevron-right"></i>
-		                    </a>`;
+		                    htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`;
 		                } else {
 		                    htmlContent += `<span></span>`;
 		                }
