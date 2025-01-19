@@ -351,6 +351,10 @@
                     htmlContent += `<span></span>`;
                 }
 
+		if (part == 0 || part > totalPages) {
+		    prevNextContainer.innerHTML = '';
+		}    
+
                 prevNextContainer.innerHTML = htmlContent;
             }
         
