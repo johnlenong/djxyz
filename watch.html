@@ -288,9 +288,9 @@
       					window.location='/watch?v='+idcd+'&p=1';
     				});
 			} else {
-				for (let j = 0; j < video.length; j++) {
-				vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[1]}"></iframe>`;
-				}
+				var numbr = `${part.toUpperCase().split('#')[0]}`;
+				vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
+				
 			}
 
 			
