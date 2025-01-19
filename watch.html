@@ -332,7 +332,7 @@
             const totalPages = video.length+1;
             let htmlContent = "";
 
-            if (currentPage) {
+            if (part) {
                 if (part > 1) {
                     htmlContent += `<a href="watch?v=${idcd}&p=${part - 1}" class="prev">
                         <i class="fas fa-chevron-left"></i>
@@ -343,7 +343,7 @@
 
                 htmlContent += `<span class="current-page">Part ${part}</span>`;
 
-                if (currentPage < totalPages) {
+                if (part < totalPages) {
                     htmlContent += `<a href="watch?v=${idcd}&p=${nextzPages}" class="next">
                         <i class="fas fa-chevron-right"></i>
                     </a>`;
