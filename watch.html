@@ -264,13 +264,14 @@
     var desc = document.querySelector('.video-description');
 
 	if (vValue) {
-		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+vValue.toUpperCase().split('#')[0]+'.json', function(data) {
+		var idcd = `${vValue.toUpperCase().split('#')[0]}`;
+		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+idcd+'.json', function(data) {
 			const url = data.alp.o;
     			const title = data.alp.t;
     			const actor = data.alp.a.join(', '); 
     			const genre = data.alp.c.join(', '); 
 
-			code.innerHTML = `${vValue}`;
+			code.innerHTML = `${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `<h3>${title}</h3>${pnum}<p>Actress: ${actor}</p><p>Category: ${genre}</p>`;
 
@@ -282,7 +283,7 @@
 				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${data.alp.p[0]}/s1600-rw/thumb.webp" alt="Background Image" /><button class="play-button" id="playButton">▶</button>`;
 				const playButton = document.getElementById('playButton');
     				playButton.addEventListener('click', () => {
-      					window.location='/watch?v='+vValue+'&p=1';
+      					window.location='/watch?v='+idcd+'&p=1';
     				});
 			}
 
