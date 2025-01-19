@@ -335,8 +335,8 @@
 				if (part == 0) {
 				    window.location=`watch?v=${idcd}`;
 				}    
-				if (part >= totalPages) {
-				    console.log('PART AKHIR');
+				if (part > totalPages) {
+				    console.log(part+' LEBIH DARI '+totalPages);
 				}
 			}
 		});
