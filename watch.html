@@ -285,6 +285,8 @@
     				playButton.addEventListener('click', () => {
       					window.location='/watch?v='+idcd+'&p=1';
     				});
+			} else {
+				vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${data.alp.v[(pnum-1)]}"></iframe>`;
 			}
 
 			
