@@ -345,29 +345,29 @@
 			sdh3.innerHTML = `Playlist Part ${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `
-					  <h3><a href="${data.alp.o}watch?v=${idcd}">${idcd} | ${title}</a></h3>
+					  <h3><i class="fa-regular fa-circle-play"></i> <a href="${data.alp.o}watch?v=${idcd}">${idcd} | ${title}</a></h3>
        					  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="Cover" />
 					  <table>
-					    <caption><h4>Information</h4></caption>
+					    <caption><h4><i class="fa-solid fa-circle-info"></i> Information</h4></caption>
 					    <tr>
 					      <td>Part</td>
 					      <td>: </td>
-					      <td>${(!part || part === null) ? '0' : part} / ${video.length}</td>
+					      <td><i class="fa-solid fa-clapperboard"></i> ${(!part || part === null) ? '0' : part} / ${video.length}</td>
 					    </tr>
 					    <tr>
 					      <td>Translation</td>
 					      <td>: </td>
-					      <td>${sub}</td>
+					      <td><i class="fa-solid fa-closed-captioning"></i> ${sub}</td>
 					    </tr>
 					    <tr>
 					      <td>Actress</td>
 					      <td>: </td>
-					      <td>${actor}</td>
+					      <td><i class="fa-regular fa-user"></i> ${actor}</td>
 					    </tr>
 					    <tr>
 					      <td>Category</td>
 					      <td>: </td>
-					      <td>${genre}</td>
+					      <td><i class="fa-solid fa-tags"></i> ${genre}</td>
 					    </tr>
 					  </table>
 					`;
