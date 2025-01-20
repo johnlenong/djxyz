@@ -290,11 +290,6 @@
         window.location.href = '/search';
     }
     var part = getParameterByName('p'); 
-	if (part) {
-		pnum = `<p>Part ${part.toUpperCase().split('#')[0]}</p>`
-	} else {
-		pnum = ``
-	}
     var code = document.querySelector('.logo');
     var side = document.querySelector('.lists');    
     var sdh3 = document.querySelector('.sidebar-h3');
@@ -347,9 +342,12 @@
 			}
 		})
 		.fail(function() {
-			document.body.style.display = "none";
+			document.body.style.opacity = "0";
     			window.location='//drivejav.xyz';
 		});
+	} else {
+		document.body.style.opacity = "0";
+		window.location='//drivejav.xyz';
 	}
 </script>
 
