@@ -333,7 +333,7 @@
     var desc = document.querySelector('.video-description');
 
 	if (vValue) {
-		var idcd = `${vValue.toUpperCase().split('#')[0]}`;
+		var idcd = `${vValue.split('~SUB')[0].toUpperCase()}`;
 		var prevNextContainer = document.querySelector(".prevnext");
 		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+idcd+'.json', function(data) {
 			const url = data.alp.o;
