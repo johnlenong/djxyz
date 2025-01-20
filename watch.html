@@ -351,29 +351,33 @@
 					    <caption><h4><i class="fa-solid fa-circle-info"></i> Information</h4></caption>
 					    <tr>
 					      <td>Part</td>
-					      <td>: <i class="fa-solid fa-clapperboard"></i> </td>
+					      <td>: </td>
+					      <td><i class="fa-solid fa-clapperboard"></i> </td>
 					      <td>${(!part || part === null) ? '0' : part} / ${video.length}</td>
 					    </tr>
 					    <tr>
 					      <td>Translation</td>
-					      <td>: <i class="fa-regular fa-closed-captioning"></i> </td>
+					      <td>: </td>
+					      <td><i class="fa-regular fa-closed-captioning"></i> </td>
 					      <td>${sub}</td>
 					    </tr>
 					    <tr>
 					      <td>Actress</td>
-					      <td>: <i class="fa-regular fa-user"></i> </td>
+					      <td>: </td>
+					      <td><i class="fa-regular fa-user"></i> </td>
 					      <td>${actor}</td>
 					    </tr>
 					    <tr>
 					      <td>Category</td>
-					      <td>: <i class="fa-solid fa-tags"></i> </td>
+					      <td>: </td>
+					      <td><i class="fa-solid fa-tags"></i> </td>
 					      <td>${genre}</td>
 					    </tr>
 					  </table>
 					`;
 
 			for (let i = 1; i < pictr.length; i++) {
-                		$('#partList').append('<li><a href="/watch?v='+idcd+'&p='+i+'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE'+pictr[i]+'/w360-h210-c-rw/thumb.webp" /><i class="fa-solid fa-file-half-dashed"></i> Part ' + i + '</a></li>');
+                		$('#partList').append('<li><a href="/watch?v='+idcd+'&p='+i+'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE'+pictr[i]+'/w360-h210-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part ' + i + '</span></a></li>');
             		}
 			
 			if (!part) {
