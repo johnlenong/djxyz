@@ -302,7 +302,7 @@
 		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+idcd+'.json', function(data) {
 			const url = data.alp.o;
     			const title = data.alp.t;
-    			const subtt = data.alp.s; const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '' : undefined;
+    			const subtt = data.alp.s; const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '-' : undefined;
     			const actor = data.alp.a.join(', '); 
     			const genre = data.alp.c.join(', '); 
 			const pictr = data.alp.p;
@@ -312,7 +312,28 @@
 			code.innerHTML = `${idcd}`;
 			sdh3.innerHTML = `${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
-			desc.innerHTML = `<h3>${idcd} | ${title} ${sub}</h3><p>Part ${part} / ${video.length}</p><h4>Information</h4><p>Translation: ${sub}</p><p>Actress: ${actor}</p><p>Category: ${genre}</p>`;
+			desc.innerHTML = `
+					  <h3>${idcd} | ${title}</h3>
+					  <table>
+					    <caption><h4>Information</h4></caption>
+					    <tr>
+					      <td>Part</td>
+					      <td>${part} / ${video.length}</td>
+					    </tr>
+					    <tr>
+					      <td>Translation</td>
+					      <td>${sub}</td>
+					    </tr>
+					    <tr>
+					      <td>Actress</td>
+					      <td>${actor}</td>
+					    </tr>
+					    <tr>
+					      <td>Category</td>
+					      <td>${genre}</td>
+					    </tr>
+					  </table>
+					`;
 
 			for (let i = 1; i < pictr.length; i++) {
                 		$('#partList').append('<li><a href="/watch?v='+idcd+'&p='+i+'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE'+pictr[i]+'/w360-h210-c-rw/thumb.webp" />Part ' + i + '</a></li>');
