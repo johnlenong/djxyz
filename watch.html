@@ -217,6 +217,11 @@
             border-radius: 8px;
         }
 
+	.video-description img {
+	    width: 100%;
+	    max-width: 400px;
+	}	    
+
 	footer {
 	    margin: 20px;
 	    text-align: center;
@@ -310,7 +315,7 @@
 			
 
 			code.innerHTML = `${idcd}`;
-			sdh3.innerHTML = `${idcd}`;
+			sdh3.innerHTML = `Playlist Part ${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `
 					  <h3>${idcd} | ${title}</h3>
@@ -319,7 +324,7 @@
 					    <caption><h4>Information</h4></caption>
 					    <tr>
 					      <td>Part</td>
-					      <td>: ${part} / ${video.length}</td>
+					      <td>: ${(!part || part === null) ? '0' : part} / ${video.length}</td>
 					    </tr>
 					    <tr>
 					      <td>Translation</td>
