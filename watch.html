@@ -335,7 +335,7 @@
 	if (vValue) {
 		var idcd = `${vValue.split('~SUB')[0].toUpperCase()}`;
 		var prevNextContainer = document.querySelector(".prevnext");
-		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+idcd+'.json', function(data) {
+		$.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/'+vValue.split('#')[0].toUpperCase()+'.json', function(data) {
 			const url = data.alp.o;
     			const title = data.alp.t;
     			const subtt = data.alp.s; const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '-' : undefined;
@@ -349,7 +349,7 @@
 			sdh3.innerHTML = `PartList <i class="fa-solid fa-table-list"></i> ${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `
-					  <h3><i class="fa-regular fa-circle-play"></i> <a href="${data.alp.o}watch?v=${idcd}~SUB-${data.alp.s}">${idcd} | ${title}</a></h3>
+					  <h3><i class="fa-regular fa-circle-play"></i> <a href="watch?v=${idcd}~SUB-${data.alp.s}">${idcd} | ${title}</a></h3>
        					  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="Cover" />
 					  <table>
 					    <caption><h4><i class="fa-solid fa-circle-info"></i> Information</h4></caption>
