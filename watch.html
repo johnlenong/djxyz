@@ -342,7 +342,7 @@
 			
 
 			code.innerHTML = `${idcd}`;
-			sdh3.innerHTML = `Playlist Part ${idcd}`;
+			sdh3.innerHTML = `<i class="fa-solid fa-table-list"></i> Partlist ${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `
 					  <h3><i class="fa-regular fa-circle-play"></i> <a href="${data.alp.o}watch?v=${idcd}">${idcd} | ${title}</a></h3>
@@ -357,7 +357,7 @@
 					    <tr>
 					      <td>Translation</td>
 					      <td>: </td>
-					      <td><i class="fa-solid fa-closed-captioning"></i> ${sub}</td>
+					      <td><i class="fa-regular fa-closed-captioning"></i> ${sub}</td>
 					    </tr>
 					    <tr>
 					      <td>Actress</td>
@@ -373,7 +373,7 @@
 					`;
 
 			for (let i = 1; i < pictr.length; i++) {
-                		$('#partList').append('<li><a href="/watch?v='+idcd+'&p='+i+'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE'+pictr[i]+'/w360-h210-c-rw/thumb.webp" />Part ' + i + '</a></li>');
+                		$('#partList').append('<li><i class="fa-solid fa-file-half-dashed"></i> <a href="/watch?v='+idcd+'&p='+i+'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE'+pictr[i]+'/w360-h210-c-rw/thumb.webp" />Part ' + i + '</a></li>');
             		}
 			
 			if (!part) {
