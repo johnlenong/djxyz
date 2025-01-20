@@ -143,12 +143,16 @@
             border-radius: 8px;
         }
 
-   .video-player img {
-      width: 100%;
-      height: 315px;
-      object-fit: cover; 
-      object-position: center; 
-    }
+	.video-player img {
+	    width: 100%;
+	    height: 315px;
+	    object-fit: cover; 
+	    object-position: center; 
+	}
+
+	.video-player img:hover {
+	    opacity: 0.8;
+	}	    
 
     .play-button {
       position: absolute;
@@ -381,7 +385,7 @@
             		}
 			
 			if (!part) {
-				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="Background Image" /><button class="play-button" id="playButton">▶</button>`;
+				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="${idcd}" title="${idcd}" onclick="window.location.href='/watch?v=${idcd}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
 				const playButton = document.getElementById('playButton');
     				playButton.addEventListener('click', () => {
       					window.location='/watch?v='+idcd+'&p=1';
