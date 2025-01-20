@@ -343,13 +343,13 @@
     			const genre = data.alp.c.join(', '); 
 			const pictr = data.alp.p;
 			const video = data.alp.v;
-			
+			const posts = `watch?v=${idcd}~SUB-${data.alp.s}`;
 
 			code.innerHTML = `${idcd}`;
 			sdh3.innerHTML = `PartList <i class="fa-solid fa-table-list"></i> ${idcd}`;
 			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `
-					  <h3><i class="fa-regular fa-circle-play"></i> <a href="watch?v=${idcd}~SUB-${data.alp.s}">${idcd} | ${title}</a></h3>
+					  <h3><i class="fa-regular fa-circle-play"></i> <a href="${posts}">${idcd} | ${title}</a></h3>
        					  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="Cover" />
 					  <table>
 					    <caption><h4><i class="fa-solid fa-circle-info"></i> Information</h4></caption>
@@ -381,14 +381,14 @@
 					`;
 
 			for (let i = 1; i < pictr.length; i++) {
-                		$('#partList').append(`<li><a href="watch?v=${idcd}~SUB-${data.alp.s}&p=${i}"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w360-h210-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
+                		$('#partList').append(`<li><a href="${posts}&p=${i}"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w360-h210-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
             		}
 			
 			if (!part) {
-				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="${idcd}" title="${idcd}" onclick="window.location.href='/watch?v=${idcd}~SUB-${data.alp.s}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
+				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="${idcd}" title="${idcd}" onclick="window.location.href='${posts}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
 				const playButton = document.getElementById('playButton');
     				playButton.addEventListener('click', () => {
-      					window.location=`watch?v=${idcd}~SUB-${data.alp.s}&p=1`;
+      					window.location=`${posts}&p=1`;
     				});
 				prevNextContainer.style.display = 'none';
 			} else {
@@ -398,12 +398,12 @@
 			        var nextzPages = ++currentPage;
 			        var totalPages = video.length; 
 			        let htmlContent = "";
-				    if (part > 1) { htmlContent += `<a href="watch?v=${idcd}~SUB-${data.alp.s}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`; } else { htmlContent += `<span></span>`; }
+				    if (part > 1) { htmlContent += `<a href="${posts}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`; } else { htmlContent += `<span></span>`; }
 		                    htmlContent += `<span class="current-page">Part ${part}</span>`;
-		                    if (part < totalPages) { htmlContent += `<a href="watch?v=${idcd}~SUB-${data.alp.s}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`; } else { htmlContent += `<span></span>`; }
+		                    if (part < totalPages) { htmlContent += `<a href="${posts}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`; } else { htmlContent += `<span></span>`; }
 		                prevNextContainer.innerHTML = htmlContent;
 				if (part == 0 || part > totalPages) {
-				    window.location=`watch?v=${idcd}~SUB-${data.alp.s}`;
+				    window.location=`${posts}`;
 				}    
 			}
 		})
