@@ -354,7 +354,7 @@
                 const subtt = data.alp.s;
                 const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '-' : undefined;
 		const tagActress = data.alp.a.map((actr) => `<a href="search?q=${actr}">${actr}</a>`).join(", ");
-		const genre = data.alp.a.map((ctgr) => `<a href="search?q=${ctgr}">${ctgr}</a>`).join(", ");
+		const genre = data.alp.c.map((ctgr) => `<a href="search?q=${ctgr}">${ctgr}</a>`).join(", ");
                 //const genre = data.alp.c.join(', ');
                 const pictr = data.alp.p;
                 const video = data.alp.v;
