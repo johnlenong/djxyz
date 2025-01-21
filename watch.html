@@ -356,6 +356,9 @@
 				    let tagActress = ""; 
 				    for (let i = 0; i < data.alp.a.length; i++) {
 				      tagActress += `<a href="search?q=${data.alp.a[i]}">${data.alp.a[i]}</a>, `;
+					    if (i==data.alp.a.length){
+						    tagActress += `<a href="search?q=${data.alp.a[i]}">${data.alp.a[i]}</a>`;
+					    }
 				    }
                 const genre = data.alp.c.join(', ');
                 const pictr = data.alp.p;
