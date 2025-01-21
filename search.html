@@ -83,9 +83,21 @@ input, button {
   .result-item span {
     display: block;
     margin-top: 5px;
-    font-size: 14px;
     color: #aaaaaa; 
+	        -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+        font-size: 20px;
   }
+
+	.result-item .id-subbed {
+      background: linear-gradient(to bottom, #ff0000, #ff3f3f, #ffffff);
+
+    }
+	.result-item .en-subbed {
+      background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
+
+    }
+	
   .result-item i {
     margin-right: 5px; 
     color: #fff; 
@@ -213,7 +225,7 @@ $(document).ready(function() {
                         const resultHtml = `
               <div class="result-item"> 
 			  <h3><a href="watch?v=${item.source.split(".")[0]}">${item.source.split("~")[0]} | ${data.alp.t}</a></h3>
-			  <span><i class="fa-regular fa-closed-captioning"></i> <a href="search?q=${subtitleId}_subbed">${sub}</a></span>
+			  <span class="${subtitleId}-subbed"><i class="fa-regular fa-closed-captioning"></i> <a href="search?q=${subtitleId}_subbed">${sub}</a></span>
 			  <br />
 			  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${data.alp.p[0]}/s1600-rw/Thumb.webp" alt="Cover ${item.source.split("~")[0]}" title="${item.source.split("~")[0]} ${sub}" onclick="window.location.href='watch?v=${item.source.split(".")[0]}';" />
 			  <br />
