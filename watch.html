@@ -353,14 +353,9 @@
                 const title = data.alp.t;
                 const subtt = data.alp.s;
                 const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '-' : undefined;
-				    let tagActress = ""; 
-				    for (let i = 0; i < data.alp.a.length; i++) {
-				      tagActress += `<a href="search?q=${data.alp.a[i]}">${data.alp.a[i]}</a>, `;
-					    if (i==data.alp.a.length){
-						    tagActress += `<a href="search?q=${data.alp.a[i]}">${data.alp.a[i]}</a>`;
-					    }
-				    }
-                const genre = data.alp.c.join(', ');
+		const tagActress = data.alp.a.map((actr) => `<a href="search?q=${actr}">${actr}</a>`).join(", ");
+		const genre = data.alp.a.map((ctgr) => `<a href="search?q=${ctgr}">${ctgr}</a>`).join(", ");
+                //const genre = data.alp.c.join(', ');
                 const pictr = data.alp.p;
                 const video = data.alp.v;
                 const posts = `watch?v=${idcd}~SUB-${data.alp.s}`;
