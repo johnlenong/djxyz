@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
-    <title>Responsive Flexbox with Dark Mode</title>
+    <title>DriveJAV — Watch adult drama series</title>
     <meta name="title" content="DriveJAV — Watch adult drama series" />
     <meta name="description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
     <!-- Open Graph / Facebook -->
@@ -27,6 +27,17 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
   </head>
   <body data-theme="dark">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          }).catch((error) => {
+            console.log('Service Worker registration failed:', error);
+          });
+        });
+      }
+    </script>
     <div class="navbar">
       <div class="menu-icon" onclick="toggleMenu()">☰</div>
       <div class="logo">DriveJAV</div>
