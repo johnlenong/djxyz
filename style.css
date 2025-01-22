@@ -18,25 +18,75 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-#installPWA {
+#installPrompt {
   display: none;
-  background-color: #0078d7;
-  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 320px;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+}
+
+#installPrompt .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#installPrompt .text {
+  flex: 1;
+  margin-left: 12px;
+}
+
+#installPrompt h3 {
+  margin: 0;
   font-size: 16px;
   font-weight: bold;
-  padding: 10px 20px;
+}
+
+#installPrompt p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+#installPrompt .icon {
+  width: 40px;
+  height: 40px;
+  background-color: #0078d7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#installPrompt button {
+  background-color: #0078d7;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
 
-#installPWA:hover {
+#installPrompt button:hover {
   background-color: #005fa3;
 }
 
-#installPWA:active {
+#installPrompt button:active {
   background-color: #004882;
 }
 
