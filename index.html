@@ -27,16 +27,37 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
   </head>
   <body data-theme="dark">
+    <button id="installPWA" style="display: none;">Install DriveJAV</button>
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          }).catch((error) => {
-            console.log('Service Worker registration failed:', error);
-          });
-        });
+      	window.addEventListener('load', () => {
+      		navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+      			console.log('Service Worker registered with scope:', registration.scope);
+      		}).catch((error) => {
+      			console.log('Service Worker registration failed:', error);
+      		});
+      	});
       }
+      let deferredPrompt;
+
+      window.addEventListener('beforeinstallprompt', (event) => {
+      	event.preventDefault();
+      	deferredPrompt = event;
+      	const installButton = document.getElementById('installPWA');
+      	installButton.style.display = 'block';
+
+      	installButton.addEventListener('click', async () => {
+      		installButton.style.display = 'none';
+      		deferredPrompt.prompt();
+      		const choiceResult = await deferredPrompt.userChoice;
+      		console.log('User choice:', choiceResult.outcome);
+      		deferredPrompt = null;
+      	});
+      });
+
+      window.addEventListener('appinstalled', () => {
+      	console.log('PWA berhasil diinstal');
+      });
     </script>
     <div class="navbar">
       <div class="menu-icon" onclick="toggleMenu()">☰</div>
