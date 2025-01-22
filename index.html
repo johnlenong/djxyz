@@ -47,11 +47,13 @@
       	installButton.style.display = 'block';
 
       	installButton.addEventListener('click', async () => {
+      		if (deferredPrompt) {
+      			deferredPrompt.prompt();
+      			const choiceResult = await deferredPrompt.userChoice;
+      			console.log('User choice:', choiceResult.outcome);
+      			deferredPrompt = null;
+      		}
       		installButton.style.display = 'none';
-      		deferredPrompt.prompt();
-      		const choiceResult = await deferredPrompt.userChoice;
-      		console.log('User choice:', choiceResult.outcome);
-      		deferredPrompt = null;
       	});
       });
 
