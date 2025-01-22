@@ -27,7 +27,16 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
   </head>
   <body data-theme="dark">
-    <button id="installPWA" style="display: none;">Install DriveJAV</button>
+    <div id="installPrompt">
+      <div class="content">
+        <div class="icon">PWA</div>
+        <div class="text">
+          <h3>Install App</h3>
+          <p>Get quick access to our app anytime.</p>
+        </div>
+        <button id="installPWA">Install</button>
+      </div>
+    </div>
     <script>
       if ('serviceWorker' in navigator) {
       	window.addEventListener('load', () => {
@@ -39,26 +48,27 @@
       	});
       }
       let deferredPrompt;
-
+  
       window.addEventListener('beforeinstallprompt', (event) => {
-      	event.preventDefault();
-      	deferredPrompt = event;
-      	const installButton = document.getElementById('installPWA');
-      	installButton.style.display = 'block';
-
-      	installButton.addEventListener('click', async () => {
-      		if (deferredPrompt) {
-      			deferredPrompt.prompt();
-      			const choiceResult = await deferredPrompt.userChoice;
-      			console.log('User choice:', choiceResult.outcome);
-      			deferredPrompt = null;
-      		}
-      		installButton.style.display = 'none';
-      	});
+        event.preventDefault();
+        deferredPrompt = event;
+        const installPrompt = document.getElementById('installPrompt');
+        installPrompt.style.display = 'block';
+  
+        const installButton = document.getElementById('installPWA');
+        installButton.addEventListener('click', async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const choiceResult = await deferredPrompt.userChoice;
+            console.log('User choice:', choiceResult.outcome);
+            deferredPrompt = null;
+          }
+          installPrompt.style.display = 'none';
+        });
       });
-
+  
       window.addEventListener('appinstalled', () => {
-      	console.log('PWA berhasil diinstal');
+        console.log('PWA berhasil diinstal');
       });
     </script>
     <div class="navbar">
