@@ -1,0 +1,151 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --bg-dark: #121212;
+  --text-dark: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color: var(--bg-dark);
+  --text-color: var(--text-dark);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar .menu-icon,
+.navbar .search-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu-overlay.active {
+  display: flex;
+}
+
+.menu-overlay a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.menu-overlay a:hover {
+  text-decoration: underline;
+}
+
+.menu-overlay a .fa-circle-xmark {
+  font-size: 50px;
+  margin-top: 150px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #333;
+  color: var(--text-dark);
+  padding: 15px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.card a {
+  text-decoration: none;
+  color: #eee;
+}
+
+.card h3 a:hover,
+.card table a:hover {
+  text-decoration: underline;
+}
+
+.en-subbed a,
+.en-subbed i {
+  background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+
+.id-subbed a,
+.id-subbed i {
+  background: linear-gradient(to bottom, #ff0000, #ff3f3f, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  border: 1px solid var(--text-dark);
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  background-color: var(--text-dark);
+  color: var(--bg-dark);
+}
+
+footer {
+  margin: 20px;
+  text-align: center;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Responsive Flexbox with Dark Mode</title>
+    <meta name="title" content="DriveJAV — Watch adult drama series" />
+    <meta name="description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://drivejav.xyz/" />
+    <meta property="og:title" content="DriveJAV — Watch adult drama series" />
+    <meta property="og:description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsF670C9BJ4OpF9gJBa246DJl93PanYkaSgb51Z6nEWIr3cENQH21kGxdgon1GJXlsuXEz7yK4rtTc3DOJkEesud8FSGXWXJRxPylTxCa-92qUEgslcA1vDaZ03CkdCHiOuAHvFlbtdw1A20HKLX8OR_9JMyNH0Mr9B-ieOCyDPrmviDX4QQ3OFH7XimA/s1200-rw/Cover.jpg" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://drivejav.xyz/" />
+    <meta property="twitter:title" content="DriveJAV — Watch adult drama series" />
+    <meta property="twitter:description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
+    <meta property="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsF670C9BJ4OpF9gJBa246DJl93PanYkaSgb51Z6nEWIr3cENQH21kGxdgon1GJXlsuXEz7yK4rtTc3DOJkEesud8FSGXWXJRxPylTxCa-92qUEgslcA1vDaZ03CkdCHiOuAHvFlbtdw1A20HKLX8OR_9JMyNH0Mr9B-ieOCyDPrmviDX4QQ3OFH7XimA/s1200-rw/Cover.jpg" />
+    <link href="/style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  </head>
+  <body data-theme="dark">
+    <div class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="logo">DriveJAV</div>
+      <div class="search-icon" onclick="openSearchPage()">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+    <div id="menuOverlay" class="menu-overlay">
+      <a href="/">Homepage</a>
+      <a href="/search?q=en_subbed">English Subbed</a>
+      <a href="/search?q=id_subbed">Indonesia Subbed</a>
+      <a href="#" onclick="toggleMenu()">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </a>
+    </div>
+    <div class="container" id="content"></div>
+    <div class="pagination" id="pagination"></div>
+    <footer> &copy; 2025 DriveJAV. All Rights Reserved. </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>
