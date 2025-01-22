@@ -53,6 +53,11 @@ button:hover {
 .result-item h3 {
   font-size: 18px;
   margin: 10px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 300px;
+  width: 100%;
 }
 .result-item h3 a {
   text-decoration: none;
