@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
@@ -8,442 +8,71 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>DriveJAV</title>
-    <script>function getParameterByName(e,t=window.location.href){e=e.replace(/[\[\]]/g,"\\$&");const a=new RegExp("[?&]"+e+"(=([^&]*)|&|$)").exec(t);return a?a[2]?decodeURIComponent(a[2].replace(/\+/g," ")):"":null}const vValue=getParameterByName("v");document.title=vValue?`Watch ${vValue.toUpperCase().split('#')[0]} - DriveJAV`:"DriveJAV";</script>
+    <script>
+      function getParameterByName(e, t = window.location.href) {
+        e = e.replace(/[\[\]]/g, "\\$&");
+        const a = new RegExp("[?&]" + e + "(=([^&]*)|&|$)").exec(t);
+        return a ? a[2] ? decodeURIComponent(a[2].replace(/\+/g, " ")) : "" : null
+      }
+      const vValue = getParameterByName("v");
+      document.title = vValue ? `Watch ${vValue.toUpperCase().split('#')[0]} - DriveJAV` : "DriveJAV";
+    </script>
     <meta name="title" content="DriveJAV — Watch adult drama series" />
     <meta name="description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
-
-<!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://drivejav.xyz/" />
     <meta property="og:title" content="DriveJAV — Watch adult drama series" />
     <meta property="og:description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
     <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsF670C9BJ4OpF9gJBa246DJl93PanYkaSgb51Z6nEWIr3cENQH21kGxdgon1GJXlsuXEz7yK4rtTc3DOJkEesud8FSGXWXJRxPylTxCa-92qUEgslcA1vDaZ03CkdCHiOuAHvFlbtdw1A20HKLX8OR_9JMyNH0Mr9B-ieOCyDPrmviDX4QQ3OFH7XimA/s1200-rw/Cover.jpg" />
-
-<!-- Twitter -->
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://drivejav.xyz/" />
     <meta property="twitter:title" content="DriveJAV — Watch adult drama series" />
     <meta property="twitter:description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
     <meta property="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsF670C9BJ4OpF9gJBa246DJl93PanYkaSgb51Z6nEWIr3cENQH21kGxdgon1GJXlsuXEz7yK4rtTc3DOJkEesud8FSGXWXJRxPylTxCa-92qUEgslcA1vDaZ03CkdCHiOuAHvFlbtdw1A20HKLX8OR_9JMyNH0Mr9B-ieOCyDPrmviDX4QQ3OFH7XimA/s1200-rw/Cover.jpg" />
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-        }
-
-        .navbar .menu-icon,
-        .navbar .search-icon {
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        .navbar .logo {
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .menu-overlay.active {
-            display: flex;
-        }
-
-        .menu-overlay a {
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-            margin: 10px 0;
-        }
-
-        .menu-overlay a:hover {
-            text-decoration: underline;
-        }
-
-.menu-overlay a .fa-circle-xmark {
-    font-size: 50px;
-    margin-top: 150px;
-}
-	    
-        .prevnext {
-	    height: 50px;
-	    background: #4c4c4c;
-	    display: flex;
-	    justify-content: space-between;
-	    align-items: center;
-	    margin: 20px 20px 0px 20px;
-	    box-sizing: border-box;
-	    color: white;
-	    font-size: 16px;
-	    border-radius: 8px;
-	}
-	.prevnext a {
-	    display: flex;
-	    align-items: center;
-	    justify-content: center;
-	    width: 30%;
-	    height: 40px;
-	    color: white;
-	    text-decoration: none;
-	    background: #000;
-	    border-radius: 8px;
-	    margin: 0 20px;
-	}
-        .prevnext .current-page {
-            color: white;
-            font-weight: bold;
-        }
-        .prevnext a:hover {
-            background-color: #6c6c6c;
-        }
-	    
-        .container {
-            display: flex;
-            flex-direction: column;
-            margin: 20px;
-        }
-
-        .video-player {
-            flex: 3;
-            background-color: #222;
-            padding: 10px;
-            border-radius: 8px;
-            overflow: hidden;
-	    position: relative;
-	    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5YSmNF2ngB7tlDeJRT57RoUNDKktErlg0mwOlgeJeOijnOZjQMHks2-m7wyMPn04NjpIBSzAGtPtb-A9hCdB8KyjxiXGsPGgVffjZWdg_WyeqbTBIrA5OAxvAbUPlrGlySGOZ82X1w-abvpHSkEMa0WNkOt5aYgIKcjMIb3-AbAqr-fZn78UOJs08jJM/s30-rw/loading.gif');
-	    background-position: center; 
-	    background-repeat: no-repeat; 
-        }
-
-        .video-player iframe {
-            width: 100%;
-            height: 315px;
-            border: none;
-            border-radius: 8px;
-        }
-
-	.video-player img {
-	    width: 100%;
-	    height: 315px;
-	    object-fit: cover; 
-	    object-position: center; 
-	}
-
-	.video-player img:hover {
-	    opacity: 0.8;
-	}	    
-
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.6); 
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      outline: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .play-button:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }    
-
-        .sidebar {
-            flex: 1;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 20px;
-	    overflow: hidden;
-        }
-
-        .sidebar h3 {
-	    text-align: center;
-	    background-color: #000;
-	    border-radius: 8px 8px 0px 0px;
-	    padding: 8px;
-	    margin: 0px;
-	}
-
-	.sidebar .lists {
-	    max-height: 560px;			
-	    overflow-y: scroll;
-	}    
-
-	#partList {
-    	    list-style: none;
-    	    padding-inline: 0;
-	}
-
-	#partList a {
-    	    width: 100%;
-    	    display: block;
-    	    margin: 20px 0px;
-    	    text-align: center;
-    	    text-decoration: none;
-    	    color: #eee;
-	    background-color: #000;
-	    border-radius: 8px;
-	    line-height: 25px;
-	    padding-bottom: 8px;
-
-	}	
-	#partList a:hover {
-	    background-color: #222;
-	}	    
-
-	#partList img {
-    	    width: 100%;    
-	    border-radius: 8px 8px 0px 0px;
-	}
-
-	#partList img:hover {
-	    opacity: 0.8;
-	}	    
-	    
-        .video-description {
-            margin: 20px;
-            background-color: #222;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-	.video-description a {
-	    color: #fff;
-	    text-decoration: none;
-	}
-
-	.video-description a:hover {
-	    color: #eee;
-	    text-decoration: underline;
-	}	    
-
-	.video-description img {
-	    width: 100%;
-	    max-width: 400px;
-	}	    
-
-	footer {
-	    margin: 20px;
-	    text-align: center;
-	}
-	    
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-                gap: 20px;
-            }
-
-            .video-player iframe, .video-player img {
-                height: 600px;
-            }
-
-            .sidebar {
-                margin-top: 0;
-            }
-        }
-    </style>
+    <link href="/css/watch.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-</head>
-<body>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.log('Service Worker registration failed:', error);
-        });
-    });
-  }
-</script>
-
-<div class="navbar">
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="logo">DriveJAV</div>
-    <div class="search-icon" onclick="openSearchPage()"><i class="fas fa-search"></i></div>
-</div>
-
-<div id="menuOverlay" class="menu-overlay">
-    <a href="/">Homepage</a>
-    <a href="/search?q=en_subbed">English Subbed</a>
-    <a href="/search?q=id_subbed">Indonesia Subbed</a>
-    <a href="#" onclick="toggleMenu()"><i class="fa-solid fa-circle-xmark"></i></a>
-</div>
-
-<div class="prevnext"></div>
-<div class="container">
-    <div class="video-player">
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="logo">DriveJAV</div>
+      <div class="search-icon" onclick="openSearchPage()">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+    <div id="menuOverlay" class="menu-overlay">
+      <a href="/">Homepage</a>
+      <a href="/search?q=en_subbed">English Subbed</a>
+      <a href="/search?q=id_subbed">Indonesia Subbed</a>
+      <a href="#" onclick="toggleMenu()">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </a>
+    </div>
+    <div class="prevnext"></div>
+    <div class="container">
+      <div class="video-player">
         <iframe id="videoframe" allowfullscreen></iframe>
-    </div>
-    <div class="sidebar">
+      </div>
+      <div class="sidebar">
         <h3 class="sidebar-h3">Other Parts</h3>
-	<div class="lists">    
-        <ul>
-            <li><a href="#" style="color: white; text-decoration: none;">Video 1</a></li>
-            <li><a href="#" style="color: white; text-decoration: none;">Video 2</a></li>
-            <li><a href="#" style="color: white; text-decoration: none;">Video 3</a></li>
-            <li><a href="#" style="color: white; text-decoration: none;">Video 4</a></li>
-        </ul>
-	</div>
+        <div class="lists">
+          <ul>
+            <li>Video 1</li>
+            <li>Video 2</li>
+            <li>Video 3</li>
+            <li>Video 4</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
-
-<div class="video-description">
-	<h3>Video Description</h3>
-	<p>This is a placeholder for the video description. You can add detailed information about the video here, such as its content, creator, and other relevant details.</p>
-</div>
-<footer>
-        &copy; 2025 DriveJAV. All Rights Reserved.
-</footer>
-<script>
-    function toggleMenu() {
-        const menuOverlay = document.getElementById('menuOverlay');
-        menuOverlay.classList.toggle('active');
-    }
-
-    function openSearchPage() {
-        window.location.href = '/search';
-    }
-    var part = getParameterByName('p');
-    var code = document.querySelector('.logo');
-    var side = document.querySelector('.lists');
-    var sdh3 = document.querySelector('.sidebar-h3');
-    var vply = document.querySelector('.video-player');
-    var desc = document.querySelector('.video-description');
-
-    if (vValue) {
-        var idcd = `${vValue.split('~SUB')[0].toUpperCase()}`;
-        var prevNextContainer = document.querySelector(".prevnext");
-        $.getJSON('https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/' + vValue.split('#')[0].toUpperCase() + '.json', function(data) {
-                const url = data.alp.o;
-                const title = data.alp.t;
-                const subtt = data.alp.s;
-                const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '-' : undefined;
-		const tagActress = data.alp.a.map((actr) => `<a href="search?q=${actr}">${actr}</a>`).join(", ");
-		const genre = data.alp.c.map((ctgr) => `<a href="search?q=${ctgr}">${ctgr}</a>`).join(", ");
-                //const genre = data.alp.c.join(', ');
-                const pictr = data.alp.p;
-                const video = data.alp.v;
-                const posts = `watch?v=${idcd}~SUB-${data.alp.s}`;
-
-                code.innerHTML = `${idcd}`;
-                sdh3.innerHTML = `PartList <i class="fa-solid fa-table-list"></i> ${idcd}`;
-                side.innerHTML = `<ul id="partList"></ul>`;
-                desc.innerHTML = `
-					  <h3><i class="fa-regular fa-circle-play"></i> <a href="${posts}">${idcd} | ${title}</a></h3>
-       					  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="Cover" />
-					  <table>
-					    <caption><h4><i class="fa-solid fa-circle-info"></i> Information</h4></caption>
-					    <tr>
-					      <td>Part</td>
-					      <td>: </td>
-					      <td><i class="fa-solid fa-clapperboard"></i> </td>
-					      <td>${(!part || part === null) ? '0' : part} / ${video.length}</td>
-					    </tr>
-					    <tr>
-					      <td>Translation</td>
-					      <td>: </td>
-					      <td><i class="fa-regular fa-closed-captioning"></i> </td>
-					      <td><a href="search?q=${subtt}_subbed">${sub}</a></td>
-					    </tr>
-					    <tr>
-					      <td>Actress</td>
-					      <td>: </td>
-					      <td><i class="fa-regular fa-user"></i> </td>
-					      <td>${tagActress}</td>
-					    </tr>
-					    <tr>
-					      <td>Category</td>
-					      <td>: </td>
-					      <td><i class="fa-solid fa-tags"></i> </td>
-					      <td>${genre}</td>
-					    </tr>
-					  </table>
-					`;
-
-                for (let i = 1; i < pictr.length; i++) {
-                    $('#partList').append(`<li><a href="${posts}&p=${i}"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w360-h210-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
-                }
-
-                if (!part) {
-                    vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="${idcd}" title="${idcd}" onclick="window.location.href='${posts}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
-                    const playButton = document.getElementById('playButton');
-                    playButton.addEventListener('click', () => {
-                        window.location = `${posts}&p=1`;
-                    });
-                    prevNextContainer.style.display = 'none';
-                } else {
-                    var numbr = `${part.toUpperCase().split('#')[0]}`;
-                    vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
-                    var currentPage = part;
-                    var nextzPages = ++currentPage;
-                    var totalPages = video.length;
-                    let htmlContent = "";
-                    if (part > 1) {
-                        htmlContent += `<a href="${posts}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`;
-                    } else {
-                        htmlContent += `<span></span>`;
-                    }
-                    htmlContent += `<span class="current-page">Part ${part}</span>`;
-                    if (part < totalPages) {
-                        htmlContent += `<a href="${posts}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`;
-                    } else {
-                        htmlContent += `<span></span>`;
-                    }
-                    prevNextContainer.innerHTML = htmlContent;
-                    if (part == 0 || part > totalPages) {
-                        window.location = `${posts}`;
-                    }
-                }
-            })
-            .fail(function() {
-                document.body.style.opacity = "0";
-                window.location = '/404';
-            });
-    } else {
-        document.body.style.opacity = "0";
-        window.location = '//drivejav.xyz';
-    }
-</script>
-
-</body>
+    <div class="video-description">
+      <h3>Video Description</h3>
+      <p>This is a placeholder for the video description. You can add detailed information about the video here, such as its content, creator, and other relevant details.</p>
+    </div>
+    <footer> &copy; 2025 DriveJAV. All Rights Reserved. </footer>
+    <script src="/js/watch.js"></script>
+  </body>
 </html>
