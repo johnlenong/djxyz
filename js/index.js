@@ -93,6 +93,7 @@
       <td> ${genre}</td>
     </tr>
   </table>
+  <i>${result.alp.t}</i>
                 
       `;
         container.appendChild(card);
