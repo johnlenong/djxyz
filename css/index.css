@@ -183,6 +183,12 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.card h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .card img {
   width: 100%;
   cursor: pointer;
@@ -196,6 +202,14 @@ body {
 .card h3 a:hover,
 .card table a:hover {
   text-decoration: underline;
+}
+
+.card .synopsis {
+    color: #999;
+    margin-top: 8px;
+    display: block;
+    font-style: italic;
+    font-size: 13px;
 }
 
 .en-subbed a,
