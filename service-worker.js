@@ -1,8 +1,8 @@
 const CACHE_NAME = 'drivejav-cache-v1';
 const urlsToCache = [
 	'/',
-	'/style.css',
-	'/script.js',
+	'/js/index.js',
+	'/css/index.css',
 	'/manifest.json',
 	'/icon/android-chrome-192x192.png',
 	'/icon/android-chrome-512x512.png'
