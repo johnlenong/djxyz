@@ -1,3 +1,36 @@
+      let deferredPrompt;
+
+      window.addEventListener('beforeinstallprompt', (event) => {
+      	event.preventDefault();
+      	deferredPrompt = event;
+      	const installPrompt = document.getElementById('installPrompt');
+      	installPrompt.style.display = 'block';
+      	const topNavbar = document.querySelectorAll('.navbar');
+      	topNavbar.style.marginTop = '114px';
+
+      	const installButton = document.getElementById('installPWA');
+      	installButton.addEventListener('click', async () => {
+      		if (deferredPrompt) {
+      			deferredPrompt.prompt();
+      			const choiceResult = await deferredPrompt.userChoice;
+      			console.log('User choice:', choiceResult.outcome);
+      			deferredPrompt = null;
+      		}
+      		installPrompt.style.display = 'none';
+      		topNavbar.style.marginTop = 'unset';
+      	});
+
+      	const closeButton = document.getElementById('closePrompt');
+      	closeButton.addEventListener('click', () => {
+      		installPrompt.style.display = 'none';
+      		topNavbar.style.marginTop = 'unset';
+      	});
+      });
+
+      window.addEventListener('appinstalled', () => {
+      	console.log('PWA installed');
+      });
+
       function toggleMenu() {
       	const menuOverlay = document.getElementById('menuOverlay');
       	menuOverlay.classList.toggle('active');
