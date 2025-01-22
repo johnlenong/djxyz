@@ -5,8 +5,8 @@ const urlsToCache = [
   '/style.css', 
   '/script.js', 
   '/manifest.json', 
-  '/icons/android-chrome-192x192.png', 
-  '/icons/android-chrome-512x512.png' 
+  '/icon/android-chrome-192x192.png', 
+  '/icon/android-chrome-512x512.png' 
 ];
 
 
