@@ -5,10 +5,8 @@
       	deferredPrompt = event;
       	const installPrompt = document.getElementById('installPrompt');
       	installPrompt.style.display = 'block';
-      	let topNavbar = document.querySelectorAll('.navbar');
-      	if (topNavbar) {
-      		topNavbar.style.marginTop = '114px';
-      	}
+      	let topNavbar = document.getElementById('navbar');
+	topNavbar.style.marginTop = '114px';
 
       	const installButton = document.getElementById('installPWA');
       	installButton.addEventListener('click', async () => {
@@ -19,17 +17,13 @@
       			deferredPrompt = null;
       		}
       		installPrompt.style.display = 'none';
-      		if (topNavbar) {
-      			topNavbar.style.marginTop = 'unset';
-      		}
+      		topNavbar.style.marginTop = 'unset';
       	});
 
       	const closeButton = document.getElementById('closePrompt');
       	closeButton.addEventListener('click', () => {
       		installPrompt.style.display = 'none';
-      		if (topNavbar) {
-      			topNavbar.style.marginTop = 'unset';
-      		}
+      		topNavbar.style.marginTop = 'unset';
       	});
       });
 
