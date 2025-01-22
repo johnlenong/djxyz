@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+}
+
+input,
+button {
+  padding: 10px 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+input {
+  background-color: #3e3e3e;
+  color: #ffffff;
+  text-align: center;
+}
+input::placeholder {
+  color: #aaaaaa;
+}
+button {
+  background-color: #aaaaaa;
+  color: #ffffff;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #9a9b9f;
+}
+#results {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.result-item {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 5px;
+  flex: 1 1 calc(33.333% - 30px);
+  box-sizing: border-box;
+  border: 1px solid #333;
+}
+
+.result-item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.result-item h3 a {
+  text-decoration: none;
+  color: #aaaaaa;
+  font-weight: bold;
+}
+.result-item h3 a:hover {
+  text-decoration: underline;
+  color: #eee;
+}
+.result-item img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+}
+.result-item span {
+  display: block;
+  margin-top: 5px;
+  color: #aaaaaa;
+}
+
+.id-subbed a,
+.id-subbed i {
+  background: linear-gradient(to bottom, #ff0000, #ff3f3f, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+.en-subbed a,
+.en-subbed i {
+  background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+
+.result-item i {
+  margin-right: 5px;
+  color: #fff;
+}
+.result-item span:first-of-type {
+  margin-top: 10px;
+}
+
+footer {
+  margin: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .result-item {
+    flex: 1 1 calc(50% - 30px);
+  }
+}
+@media (max-width: 480px) {
+  .result-item {
+    flex: 1 1 100%;
+  }
+}
