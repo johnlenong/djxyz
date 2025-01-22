@@ -28,14 +28,16 @@
   </head>
   <body data-theme="dark">
     <div id="installPrompt">
-      <button class="close" id="closePrompt">&times;</button>
       <div class="content">
         <img src="/icon/android-chrome-192x192.png" alt="App Icon" />
         <div class="text">
           <h3>Install App</h3>
           <p>Get quick access to our app anytime.</p>
         </div>
-        <button id="installPWA">Install</button>
+        <div class="actions">
+          <button id="installPWA">Install</button>
+          <button class="close" id="closePrompt">Close</button>
+        </div>
       </div>
     </div>
     <script>
@@ -49,32 +51,32 @@
       	});
       }
       let deferredPrompt;
-      
+  
       window.addEventListener('beforeinstallprompt', (event) => {
-      	event.preventDefault();
-      	deferredPrompt = event;
-      	const installPrompt = document.getElementById('installPrompt');
-      	installPrompt.style.display = 'block';
-      
-      	const installButton = document.getElementById('installPWA');
-      	installButton.addEventListener('click', async () => {
-      		if (deferredPrompt) {
-      			deferredPrompt.prompt();
-      			const choiceResult = await deferredPrompt.userChoice;
-      			console.log('User choice:', choiceResult.outcome);
-      			deferredPrompt = null;
-      		}
-      		installPrompt.style.display = 'none';
-      	});
-      
-      	const closeButton = document.getElementById('closePrompt');
-      	closeButton.addEventListener('click', () => {
-      		installPrompt.style.display = 'none';
-      	});
+        event.preventDefault();
+        deferredPrompt = event;
+        const installPrompt = document.getElementById('installPrompt');
+        installPrompt.style.display = 'block';
+  
+        const installButton = document.getElementById('installPWA');
+        installButton.addEventListener('click', async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const choiceResult = await deferredPrompt.userChoice;
+            console.log('User choice:', choiceResult.outcome);
+            deferredPrompt = null;
+          }
+          installPrompt.style.display = 'none';
+        });
+  
+        const closeButton = document.getElementById('closePrompt');
+        closeButton.addEventListener('click', () => {
+          installPrompt.style.display = 'none';
+        });
       });
-      
+  
       window.addEventListener('appinstalled', () => {
-      	console.log('PWA installed');
+        console.log('PWA installed');
       });
     </script>
     <div class="navbar">
