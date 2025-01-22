@@ -6,7 +6,7 @@
       	const installPrompt = document.getElementById('installPrompt');
       	installPrompt.style.display = 'block';
       	let topNavbar = document.getElementById('navbar');
-	topNavbar.style.marginTop = '114px';
+	topNavbar.style.marginTop = '85px';
 
       	const installButton = document.getElementById('installPWA');
       	installButton.addEventListener('click', async () => {
