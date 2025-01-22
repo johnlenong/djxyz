@@ -18,6 +18,28 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+#installPWA {
+  display: none;
+  background-color: #0078d7;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#installPWA:hover {
+  background-color: #005fa3;
+}
+
+#installPWA:active {
+  background-color: #004882;
+}
+
 .navbar {
   display: flex;
   align-items: center;
