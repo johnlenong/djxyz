@@ -21,8 +21,9 @@ body {
 #installPrompt {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  top: 20px; 
+  left: 50%; 
+  transform: translateX(-50%); 
   background-color: #fff;
   color: #000;
   border: 1px solid #ddd;
@@ -60,7 +61,13 @@ body {
 #installPrompt img {
   width: 40px;
   height: 40px;
-  border-radius: 8px; 
+  border-radius: 8px;
+}
+
+#installPrompt .actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
 }
 
 #installPrompt button {
@@ -84,19 +91,22 @@ body {
 }
 
 #installPrompt .close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: none;
+  background-color: #f5f5f5;
+  color: #555;
   border: none;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
   cursor: pointer;
-  color: #888;
+  transition: background-color 0.3s ease;
 }
 
 #installPrompt .close:hover {
-  color: #000;
+  background-color: #e0e0e0;
+}
+
+#installPrompt .close:active {
+  background-color: #ccc;
 }
 
 .navbar {
