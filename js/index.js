@@ -62,7 +62,7 @@
       try {
         const result = await $.getJSON(url);
         const subtt = result.alp.s;
-        const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '-' : undefined;
+        const sub = subtt === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '<i class="fa-solid fa-minus"></i>' : undefined;
         const tagActress = result.alp.a.map((actr) => `
   <a href="search?q=${actr}">${actr}</a>`).join(", ");
         const genre = result.alp.c.map((ctgr) => `
