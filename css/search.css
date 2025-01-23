@@ -83,18 +83,19 @@ button:hover {
   color: #aaaaaa;
 }
 
-.id-subbed a,
-.id-subbed i {
+.id-subbed {
   background: linear-gradient(to bottom, #ff0000, #ff3f3f, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 20px;
 }
-.en-subbed a,
-.en-subbed i {
+.en-subbed {
   background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+.raw-subbed {
   font-size: 20px;
 }
 
