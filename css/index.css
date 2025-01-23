@@ -210,6 +210,8 @@ body {
   display: block;
   font-style: italic;
   font-size: 13px;
+  border-left: 1px solid;
+  padding-left: 10px;
 }
 
 .id-subbed a, .id-subbed i,
