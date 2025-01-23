@@ -212,20 +212,24 @@ body {
     font-size: 13px;
 }
 
-.en-subbed a,
-.en-subbed i {
-  background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
+.id-subbed,
+.en-subbed,
+.raw-subbed {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 20px;
 }
 
-.id-subbed a,
-.id-subbed i {
+.id-subbed {
   background: linear-gradient(to bottom, #ff0000, #ff3f3f, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 20px;
+}
+
+.en-subbed {
+  background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
+}
+
+.raw-subbed {
+  background: linear-gradient(to bottom, #ccc, #999, rgb(0 0 0 / 10%));
 }
 
 .pagination {
