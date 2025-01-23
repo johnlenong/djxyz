@@ -83,20 +83,27 @@ button:hover {
   color: #aaaaaa;
 }
 
-.id-subbed {
+.id-subbed a, .id-subbed i,
+.en-subbed a, .en-subbed i,
+.raw-subbed a,.raw-subbed i {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+
+.id-subbed a, 
+.id-subbed i {
   background: linear-gradient(to bottom, #ff0000, #ff3f3f, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 20px;
 }
-.en-subbed {
+
+.en-subbed a, 
+.en-subbed i {
   background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 20px;
 }
-.raw-subbed {
-  font-size: 20px;
+
+.raw-subbed a,
+.raw-subbed i {
+  background: linear-gradient(to bottom, #ccc, #999, rgb(0 0 0 / 10%));
 }
 
 .result-item i {
