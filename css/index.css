@@ -205,30 +205,33 @@ body {
 }
 
 .card .synopsis {
-    color: #999;
-    margin-top: 8px;
-    display: block;
-    font-style: italic;
-    font-size: 13px;
+  color: #999;
+  margin-top: 8px;
+  display: block;
+  font-style: italic;
+  font-size: 13px;
 }
 
-.id-subbed,
-.en-subbed,
-.raw-subbed {
+.id-subbed a, .id-subbed i,
+.en-subbed a, .en-subbed i,
+.raw-subbed a,.raw-subbed i {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 20px;
 }
 
-.id-subbed {
+.id-subbed a, 
+.id-subbed i {
   background: linear-gradient(to bottom, #ff0000, #ff3f3f, #ffffff);
 }
 
-.en-subbed {
+.en-subbed a, 
+.en-subbed i {
   background: linear-gradient(to bottom, #0400ff, #b8bcff, #ff0000);
 }
 
-.raw-subbed {
+.raw-subbed a,
+.raw-subbed i {
   background: linear-gradient(to bottom, #ccc, #999, rgb(0 0 0 / 10%));
 }
 
