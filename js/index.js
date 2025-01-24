@@ -78,7 +78,7 @@
     <i class="fa-regular fa-closed-captioning"></i>
     <a href="search?q=${subtitleId}_subbed">${sub}</a>
   </span>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${result.alp.p[0]}/s1600-rw/Thumb.webp" alt="${currentItems[i].split("~")[0]} ${sub.replace(/<\/?i[^>]*>/g, '')}" title="${currentItems[i].split("~")[0]} ${sub.replace(/<\/?i[^>]*>/g, '')}" onclick="window.location.href='watch?v=${item}';" />
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${result.alp.p[0]}/s300-rw/Thumb.webp" width="300" height="auto" alt="${currentItems[i].split("~")[0]} ${sub.replace(/<\/?i[^>]*>/g, '')}" title="${currentItems[i].split("~")[0]} ${sub.replace(/<\/?i[^>]*>/g, '')}" onclick="window.location.href='watch?v=${item}';" />
   <table>
     <tr>
       <td>
