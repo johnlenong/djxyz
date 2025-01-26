@@ -15,8 +15,8 @@
         return a ? a[2] ? decodeURIComponent(a[2].replace(/\+/g, " ")) : "" : null
       }
       const vValue = getParameterByName("v");
-    	const vSubtt = vValue.toUpperCase().split('#')[0].replace(/^.*?~SUB-/, "") === 'id' ? 'Sub Indonesia' : subtt === 'en' ? 'Sub English' : subtt === 'RAW' ? '-' : undefined;
-      document.title = vValue ? `Watch ${vValue.toUpperCase().split('~')[0]} ${vSubtt}- DriveJAV` : "DriveJAV";
+    	const vSubtt = vValue.toUpperCase().split('#')[0].replace(/^.*?~SUB-/, "") === 'id' ? 'Sub Indonesia' : vValue === 'en' ? 'Sub English' : vValue === 'RAW' ? '-' : undefined;
+      document.title = vValue ? `Watch ${vValue.toUpperCase().split('~')[0]} ${vSubtt} - DriveJAV` : "DriveJAV";
     </script>
     <meta name="title" content="DriveJAV — Watch adult drama series" />
     <meta name="description" content="Discover a captivating collection of adult drama films with deep stories, intense emotions, and unforgettable moments. Dive into an unparalleled viewing experience here!" />
