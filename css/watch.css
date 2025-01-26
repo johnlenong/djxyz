@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+  margin: auto;
+  max-width: 1780px;
   font-family: Arial, sans-serif;
   background-color: #121212;
   color: white;
