@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: auto;
+  max-width: 1333px;
   background-color: #121212;
   color: #ffffff;
 }
