@@ -107,9 +107,9 @@ if (vValue) {
 				
 				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`;
 
-				setMetaTag("name='title'", idcd+sub);
-				setMetaTag("property='og:title'", idcd+sub);
-				setMetaTag("property='twitter:title'", idcd+sub);
+				setMetaTag("name='title'", `Watch ${idcd} ${sub} - DriveJAV`);
+				setMetaTag("property='og:title'", `Watch ${idcd} ${sub} - DriveJAV`);
+				setMetaTag("property='twitter:title'", `Watch ${idcd} ${sub} - DriveJAV`);
 
 				setMetaTag("property='og:url'", url+posts);
 				setMetaTag("property='twitter:url'", url+posts);
@@ -122,9 +122,9 @@ if (vValue) {
 				
 				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[part]}/s1600-rw/thumb.webp}`;
 
-				setMetaTag("name='title'", idcd+part+sub);
-				setMetaTag("property='og:title'", idcd+part+sub);
-				setMetaTag("property='twitter:title'", idcd+part+sub);
+				setMetaTag("name='title'", `Watch ${idcd} Part-${part} ${sub}`);
+				setMetaTag("property='og:title'", `Watch ${idcd} Part-${part} ${sub}`);
+				setMetaTag("property='twitter:title'", `Watch ${idcd} Part-${part} ${sub}`);
 
 				setMetaTag("property='og:url'", `${url}${posts}&p=${part}`);
 				setMetaTag("property='twitter:url'", `${url}${posts}&p=${part}`);
