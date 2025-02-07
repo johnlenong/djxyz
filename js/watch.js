@@ -59,8 +59,8 @@ if (vValue) {
 			setMetaTag("name='description'", title);
 				
 			const canonicalLink = document.createElement("link");
-			canonicalLink.rel = "canonical";
-			canonicalLink.href = `${url}${posts}`; 
+				canonicalLink.rel = "canonical";
+				canonicalLink.href = `${url}${posts}`; 
 			document.head.appendChild(canonicalLink);
 
 			code.innerHTML = `${idcd}`;
@@ -162,7 +162,11 @@ if (vValue) {
 						"identifier": `${idcd}~SUB-${data.alp.s}&p=${part}`,
 						"description": title,
 						"url": `${url}${posts}&p=${part}`,
-						"image": imageContent
+						"image": imageContent,
+						"partOfSeries": {
+							"@type": "TVSeries",
+							"name": `${idcd}~SUB-${data.alp.s}`
+						}
 					}
 				};
 
