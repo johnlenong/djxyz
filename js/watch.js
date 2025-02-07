@@ -111,8 +111,8 @@ if (vValue) {
 				setMetaTag("property='og:title'", idcd+sub);
 				setMetaTag("property='twitter:title'", idcd+sub);
 
-				setMetaTag("property='og:url'", url+post);
-				setMetaTag("property='twitter:url'", url+post);
+				setMetaTag("property='og:url'", url+posts);
+				setMetaTag("property='twitter:url'", url+posts);
 
 				setMetaTag("property='og:image'", imageContent);
 				setMetaTag("property='twitter:image'", imageContent);
