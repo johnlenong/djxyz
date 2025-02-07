@@ -22,13 +22,11 @@ $(document).ready(function() {
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}
-			return response.json(); // Mengonversi ke JSON
+			return response.json(); 
 		})
 		.then(data => {
-			// Ambil data dari title array dalam db.json
 			const titles = data.filmTitles;
 
-			// Iterasi melalui array title dan membangun URL
 			for (let i = 0; i < titles.length; i++) {
 				const newUrl = `https://cdn.jsdelivr.net/gh/johnlenong/djxyz@main/db/post/${titles[i].replace("~","~SUB-")}.json`;
 				jsonUrls.push(newUrl);
@@ -50,8 +48,6 @@ $(document).ready(function() {
 						source: fileName
 					});
 				});
-			}).fail(function() {
-				$('#results').html('<p style="color: red;">Failed to fetch one or more JSON files. Please try again later.</p>');
 			});
 
 			$('#search-form').submit(function(event) {
@@ -63,7 +59,7 @@ $(document).ready(function() {
 				resultsDiv.empty();
 
 				if (!query) {
-					resultsDiv.html('<p>Please enter a search term.</p>');
+					resultsDiv.html('<div style="width:100%;text-align:center">Please enter a search term.</div>');
 					return;
 				}
 
@@ -102,7 +98,7 @@ $(document).ready(function() {
 				});
 
 				if (!foundResults) {
-					resultsDiv.html('<p>No results found for your search.</p>');
+					resultsDiv.html('<div style="width:100%;text-align:center">No results found for your search.</div>');
 				}
 			});
 
