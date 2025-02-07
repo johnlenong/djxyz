@@ -49,6 +49,9 @@ button:hover {
   flex: 1 1 calc(33.333% - 30px);
   box-sizing: border-box;
   border: 1px solid #333;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
 }
 
 .result-item h3 {
@@ -57,7 +60,6 @@ button:hover {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: 300px;
   width: 100%;
 }
 .result-item h3 a {
