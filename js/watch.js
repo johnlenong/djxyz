@@ -99,7 +99,7 @@ if (vValue) {
 				`;
 
 			for (let i = 1; i < pictr.length; i++) {
-				$('#partList').append(`<li><a href="${posts}&p=${i}"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w360-h210-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
+				$('#partList').append(`<li><a href="${posts}&p=${i}"><img alt="Part-${i}" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w360-h210-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
 			}
 
 			if (!part) {
@@ -173,19 +173,19 @@ if (vValue) {
 				setJsonLd(jsonLdData);
 				
 				var numbr = `${part.toUpperCase().split('#')[0]}`;
-				vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
+				vply.innerHTML = `<iframe title="${idcd} Part-${part} ${sub}" id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
 				var currentPage = part;
 				var nextzPages = ++currentPage;
 				var totalPages = video.length;
 				let htmlContent = "";
 				if (part > 1) {
-					htmlContent += `<a href="${posts}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`;
+					htmlContent += `<a aria-label="Part ${part - 1}" href="${posts}&p=${part - 1}" class="prev"> <i class="fas fa-chevron-left"></i> </a>`;
 				} else {
 					htmlContent += `<span></span>`;
 				}
 				htmlContent += `<span class="current-page">Part ${part}</span>`;
 				if (part < totalPages) {
-					htmlContent += `<a href="${posts}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`;
+					htmlContent += `<a aria-label="Part ${nextzPages}" href="${posts}&p=${nextzPages}" class="next"> <i class="fas fa-chevron-right"></i> </a>`;
 				} else {
 					htmlContent += `<span></span>`;
 				}
