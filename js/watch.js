@@ -117,7 +117,18 @@ if (vValue) {
 				setMetaTag("property='og:image'", imageContent);
 				setMetaTag("property='twitter:image'", imageContent);
 				
-				
+				// JSON-LD data
+				const jsonLdData = {
+					"@context": "https://schema.org",
+					"@type": "WebSite",
+					"name": `Watch ${idcd} ${sub} - DriveJAV`,
+					"url": url+posts,
+					"description": title,
+					"image": imageContent					
+				};
+
+				setJsonLd(jsonLdData);
+
 			} else {
 				
 				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[part]}/s1600-rw/thumb.webp}`;
@@ -131,6 +142,26 @@ if (vValue) {
 
 				setMetaTag("property='og:image'", imageContent);
 				setMetaTag("property='twitter:image'", imageContent);
+				
+				// JSON-LD data
+				const jsonLdData = {
+					"@context": "https://schema.org",
+					"@type": "WebSite",
+					"name": `Watch ${idcd} ${sub} - DriveJAV`,
+					"url": `${url}${posts}`,
+					"description": title,
+					"image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`,
+					"mainEntity": {
+						"@type": "CreativeWork",
+						"name": `Watch ${idcd} Part-${part} ${sub}`,
+						"identifier": `${idcd}~SUB-${data.alp.s}&p=${part}`,
+						"description": title,
+						"url": `${url}${posts}&p=${part}`,
+						"image": imageContent
+					}
+				};
+
+				setJsonLd(jsonLdData);
 				
 				var numbr = `${part.toUpperCase().split('#')[0]}`;
 				vply.innerHTML = `<iframe id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
