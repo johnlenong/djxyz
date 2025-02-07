@@ -165,7 +165,7 @@ if (vValue) {
 						"image": imageContent,
 						"partOfSeries": {
 							"@type": "TVSeries",
-							"name": `${idcd}~SUB-${data.alp.s}`
+							"name": `${idcd} ${sub}`
 						}
 					}
 				};
