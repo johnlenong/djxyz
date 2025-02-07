@@ -8,6 +8,7 @@ const query = getQueryParam('q');
 if (query) {
 	const searchInput = document.getElementById('search-input');
 	searchInput.value = query;
+	$('#results').html(`<span style="width:100%">You want search ${query} ?</span>`);
 }
 
 
