@@ -198,16 +198,6 @@ if (vValue) {
 								"@type": "Person",
 								"name": `${data.alp.a[0]}`
 							},
-							"associatedArticle": {
-								"@type": "Article",
-								"headline": `Watch ${idcd} ${sub} - DriveJAV`,
-								"image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`,
-								"author": {
-									"@type": "Person",
-									"name": `${data.alp.a[0]}`
-								},
-								"url": url+posts
-							},
 							"keywords": `${idcd}, ${idcd} ${sub}, ${data.alp.a.map((actr) => actr).join(", ")}`
 						}
 					]	
