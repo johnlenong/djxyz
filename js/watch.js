@@ -32,7 +32,7 @@ function toggleMenu() {
 function openSearchPage() {
 	window.location.href = '/search';
 }
-var part = getParameterByName('p').replace(/#.*$/, "");
+var part = getParameterByName('p');
 var code = document.querySelector('.logo');
 var side = document.querySelector('.lists');
 var sdh3 = document.querySelector('.sidebar-h3');
@@ -177,7 +177,7 @@ if (vValue) {
 							"description": title,
 							"thumbnailUrl": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`,
 							"duration": "PT20M30S",
-							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part-1]}`,
+							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part.replace(/#.*$/, "")-1]}`,
 							"publisher": {
 								"@type": "Organization",
 								"name": "DriveJAV",
