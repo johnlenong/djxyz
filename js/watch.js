@@ -193,7 +193,7 @@ if (vValue) {
 
 				setJsonLd(jsonLdData);
 				
-				var numbr = `${part.toUpperCase()}`;
+				var numbr = `${part.replace(/#.*$/, "")}`;
 				vply.innerHTML = `<iframe title="${idcd} Part-${part} ${sub}" id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
 				var currentPage = part;
 				var nextzPages = ++currentPage;
