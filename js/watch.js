@@ -68,7 +68,7 @@ if (vValue) {
 			side.innerHTML = `<ul id="partList"></ul>`;
 			desc.innerHTML = `
 				  <h3><i class="fa-regular fa-circle-play"></i> <a href="${posts}">${idcd} | ${title}</a></h3>
-					  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="Cover" />
+					  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/${idcd}.webp" alt="${idcd}" />
 				  <table>
 					<caption><h4><i class="fa-solid fa-circle-info"></i> Information</h4></caption>
 					<tr>
@@ -99,11 +99,11 @@ if (vValue) {
 				`;
 
 			for (let i = 1; i < pictr.length; i++) {
-				$('#partList').append(`<li><a href="${posts}&p=${i}"><img alt="Part-${i}" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w600-h350-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
+				$('#partList').append(`<li><a href="${posts}&p=${i}"><img alt="${idcd} Part-${i}" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w600-h350-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
 			}
 
 			if (!part) {
-				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp" alt="${idcd}" title="${idcd}" onclick="window.location.href='${posts}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
+				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/${idcd}.webp" alt="${idcd}" title="${idcd} ${sub}" onclick="window.location.href='${posts}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
 				const playButton = document.getElementById('playButton');
 				playButton.addEventListener('click', () => {
 					window.location = `${posts}&p=1`;
