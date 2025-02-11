@@ -173,7 +173,7 @@ if (vValue) {
 						},
 						{
 							"@type": "VideoObject",
-							"name": `${idcd} ${sub} Part-${part.replace(/#.*$/, "")} - DriveJAV`,
+							"name": `${idcd} ${sub} Part-${part.replace(/#.*$/, "")} | DriveJAV`,
 							"description": title,
 							"thumbnailUrl": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`,
 							"uploadDate": "2024-02-10T08:00:00+00:00",
