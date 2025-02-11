@@ -110,7 +110,7 @@ if (vValue) {
 				});
 				prevNextContainer.style.display = 'none';
 				
-				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`;
+				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`;
 
 				setMetaTag("name='title'", `Watch ${idcd} ${sub} - DriveJAV`);
 				setMetaTag("property='og:title'", `Watch ${idcd} ${sub} - DriveJAV`);
@@ -136,7 +136,7 @@ if (vValue) {
 
 			} else {
 				
-				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[part]}/s1600-rw/thumb.webp}`;
+				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[part]}/s1600-rw/thumb.webp`;
 
 				setMetaTag("name='title'", `Watch ${idcd} Part-${part} ${sub}`);
 				setMetaTag("property='og:title'", `Watch ${idcd} Part-${part} ${sub}`);
@@ -157,7 +157,7 @@ if (vValue) {
 							"name": `Watch ${idcd} ${sub} - DriveJAV`,
 							"url": `${url}${posts}`,
 							"description": title,
-							"image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`,
+							"image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`,
 							"mainEntity": {
 								"@type": "CreativeWork",
 								"name": `Watch ${idcd} Part-${part} ${sub}`,
@@ -175,7 +175,8 @@ if (vValue) {
 							"@type": "VideoObject",
 							"name": `${idcd} ${sub} - DriveJAV`,
 							"description": title,
-							"thumbnailUrl": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`,
+							"thumbnailUrl": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`,
+							"uploadDate": "2024-02-10T08:00:00+00:00",
 							"duration": "PT20M30S",
 							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part.replace(/#.*$/, "")-1]}`,
 							"publisher": {
