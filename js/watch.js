@@ -126,7 +126,7 @@ if (vValue) {
 				const jsonLdData = {
 					"@context": "https://schema.org",
 					"@type": "WebSite",
-					"name": `Watch ${idcd} ${sub} - DriveJAV`,
+					"name": `${idcd} ${sub}`,
 					"url": url+posts,
 					"description": title,
 					"image": imageContent					
@@ -173,12 +173,17 @@ if (vValue) {
 						},
 						{
 							"@type": "VideoObject",
-							"name": `${idcd} ${sub} Part-${part} | DriveJAV`,
+							"name": `${idcd} ${sub} Part-${part}`,
 							"description": title,
 							"thumbnailUrl": imageContent,
 							"uploadDate": "2024-02-10T08:00:00+00:00",
 							"duration": "PT20M30S",
 							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part-1]}`,
+							"url": `${url}${posts}&p=${part}`,
+							"partOfSeries": {
+								"@type": "CreativeWorkSeries",
+								"name": `${idcd} ${sub}`
+							},
 							"publisher": {
 								"@type": "Organization",
 								"name": "DriveJAV",
