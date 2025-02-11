@@ -141,7 +141,7 @@ if (vValue) {
 					    "identifier": `${idcd}~SUB-${data.alp.s}&p=${(i+1)}`,
 					    "description": title,
 					    "image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[(i+1)]}/s1600-rw/${idcd}_part-${(i+1)}.webp`,
-					    "partOfSeries": {
+					    "isPartOf": {
 						"@type": "CreativeWorkSeries",
 						"name": `${idcd} ${sub}`
 					    }
@@ -177,7 +177,7 @@ if (vValue) {
 							"duration": "PT20M30S",
 							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part-1]}`,
 							"url": `${url}${posts}&p=${part}`,
-							"partOfSeries": {
+							"isPartOf": {
 								"@type": "CreativeWorkSeries",
 								"name": `${idcd} ${sub}`
 							},
