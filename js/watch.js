@@ -103,15 +103,15 @@ if (vValue) {
 			}
 
 			if (!part) {
-				vply.innerHTML = `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/${idcd}.webp" alt="${idcd}" title="${idcd} ${sub}" onclick="window.location.href='${posts}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
+				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/${idcd}.webp`;
+				
+				vply.innerHTML = `<img src="${imageContent}" alt="${idcd}" title="${idcd} ${sub}" onclick="window.location.href='${posts}&p=1';" /><button class="play-button" id="playButton">▶</button>`;
 				const playButton = document.getElementById('playButton');
 				playButton.addEventListener('click', () => {
 					window.location = `${posts}&p=1`;
 				});
 				prevNextContainer.style.display = 'none';
 				
-				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`;
-
 				setMetaTag("name='title'", `Watch ${idcd} ${sub} - DriveJAV`);
 				setMetaTag("property='og:title'", `Watch ${idcd} ${sub} - DriveJAV`);
 				setMetaTag("property='twitter:title'", `Watch ${idcd} ${sub} - DriveJAV`);
@@ -136,7 +136,7 @@ if (vValue) {
 
 			} else {
 				
-				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[part]}/s1600-rw/thumb.webp`;
+				const imageContent = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[part]}/s1600-rw/${idcd}_part-${part}.webp`;
 
 				setMetaTag("name='title'", `Watch ${idcd} Part-${part} ${sub}`);
 				setMetaTag("property='og:title'", `Watch ${idcd} Part-${part} ${sub}`);
@@ -173,12 +173,12 @@ if (vValue) {
 						},
 						{
 							"@type": "VideoObject",
-							"name": `${idcd} ${sub} Part-${part.replace(/#.*$/, "")} | DriveJAV`,
+							"name": `${idcd} ${sub} Part-${part} | DriveJAV`,
 							"description": title,
 							"thumbnailUrl": imageContent,
 							"uploadDate": "2024-02-10T08:00:00+00:00",
 							"duration": "PT20M30S",
-							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part.replace(/#.*$/, "")-1]}`,
+							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part-1]}`,
 							"publisher": {
 								"@type": "Organization",
 								"name": "DriveJAV",
@@ -190,8 +190,8 @@ if (vValue) {
 						},
 						{
 							"@type": "ImageObject",
-							"name": `${idcd} Part-${part.replace(/#.*$/, "")}`,
-							"contentUrl": imageContent.replace("w/thumb.webp",`p/${idcd}.png`),
+							"name": `${idcd} Part-${part}`,
+							"contentUrl": imageContent.replace(/-rw.*/, `-rp/${idcd}_part-${part}.png`),
 							"thumbnail": imageContent.replace("/s16","/s6"),
 							"caption": `${idcd} ${sub} - DriveJAV`,
 							"author": {
