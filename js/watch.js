@@ -32,7 +32,7 @@ function toggleMenu() {
 function openSearchPage() {
 	window.location.href = '/search';
 }
-var part = getParameterByName('p');
+var part = getParameterByName('p').replace(/#.*$/, "");
 var code = document.querySelector('.logo');
 var side = document.querySelector('.lists');
 var sdh3 = document.querySelector('.sidebar-h3');
@@ -151,28 +151,48 @@ if (vValue) {
 				// JSON-LD data
 				const jsonLdData = {
 					"@context": "https://schema.org",
-					"@type": "WebSite",
-					"name": `Watch ${idcd} ${sub} - DriveJAV`,
-					"url": `${url}${posts}`,
-					"description": title,
-					"image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`,
-					"mainEntity": {
-						"@type": "CreativeWork",
-						"name": `Watch ${idcd} Part-${part} ${sub}`,
-						"identifier": `${idcd}~SUB-${data.alp.s}&p=${part}`,
-						"description": title,
-						"url": `${url}${posts}&p=${part}`,
-						"image": imageContent,
-						"partOfSeries": {
-							"@type": "TVSeries",
-							"name": `${idcd} ${sub}`
+					"@graph": [
+						{
+							"@type": "WebSite",
+							"name": `Watch ${idcd} ${sub} - DriveJAV`,
+							"url": `${url}${posts}`,
+							"description": title,
+							"image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`,
+							"mainEntity": {
+								"@type": "CreativeWork",
+								"name": `Watch ${idcd} Part-${part} ${sub}`,
+								"identifier": `${idcd}~SUB-${data.alp.s}&p=${part}`,
+								"description": title,
+								"url": `${url}${posts}&p=${part}`,
+								"image": imageContent,
+								"partOfSeries": {
+									"@type": "TVSeries",
+									"name": `${idcd} ${sub}`
+								}
+							}
+						},
+						{
+							"@type": "VideoObject",
+							"name": `${idcd} ${sub} - DriveJAV`,
+							"description": title,
+							"thumbnailUrl": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp}`,
+							"duration": "PT20M30S",
+							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part-1]}`,
+							"publisher": {
+								"@type": "Organization",
+								"name": "DriveJAV",
+								"logo": {
+									"@type": "ImageObject",
+									"url": "https://drivejav.xyz/icon/apple-touch-icon.png"
+								}
+							}
 						}
-					}
+					]	
 				};
 
 				setJsonLd(jsonLdData);
 				
-				var numbr = `${part.toUpperCase().split('#')[0]}`;
+				var numbr = `${part.toUpperCase()}`;
 				vply.innerHTML = `<iframe title="${idcd} Part-${part} ${sub}" id="videoframe" allowfullscreen="" src="https://www.blogger.com/video.g?token=AD6v5d${video[numbr-1]}"></iframe>`;
 				var currentPage = part;
 				var nextzPages = ++currentPage;
