@@ -157,7 +157,7 @@ if (vValue) {
 							"name": `Watch ${idcd} ${sub} - DriveJAV`,
 							"url": `${url}${posts}`,
 							"description": title,
-							"image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`,
+							"image": imageContent,
 							"mainEntity": {
 								"@type": "CreativeWork",
 								"name": `Watch ${idcd} Part-${part} ${sub}`,
@@ -175,7 +175,7 @@ if (vValue) {
 							"@type": "VideoObject",
 							"name": `${idcd} ${sub} Part-${part.replace(/#.*$/, "")} | DriveJAV`,
 							"description": title,
-							"thumbnailUrl": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[0]}/s1600-rw/thumb.webp`,
+							"thumbnailUrl": imageContent,
 							"uploadDate": "2024-02-10T08:00:00+00:00",
 							"duration": "PT20M30S",
 							"embedUrl": `https://www.blogger.com/video.g?token=AD6v5d${video[part.replace(/#.*$/, "")-1]}`,
@@ -187,6 +187,23 @@ if (vValue) {
 									"url": "https://drivejav.xyz/icon/apple-touch-icon.png"
 								}
 							}
+						},
+						{
+							"@type": "ImageObject",
+							"name": `${idcd} Part-${part.replace(/#.*$/, "")}`,
+							"contentUrl": imageContent.replace("w/thumb.webp",`p/${idcd}.png`),
+							"thumbnail": imageContent.replace("/s16","/s6"),
+							"caption": `${idcd} ${sub} - DriveJAV`,
+							"author": {
+								"@type": "Person",
+								"name": `${data.alp.a[0]}`
+							},
+							"associatedArticle": {
+								"@type": "Article",
+								"headline": `Watch ${idcd} ${sub} - DriveJAV`,
+								"url": `${url}${posts}&p=${part}`
+							},
+							"keywords": `${idcd}, ${idcd} ${sub}, ${data.alp.a.map((actr) => actr).join(", ")}`
 						}
 					]	
 				};
