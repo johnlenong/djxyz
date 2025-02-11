@@ -99,7 +99,7 @@ if (vValue) {
 				`;
 
 			for (let i = 1; i < pictr.length; i++) {
-				$('#partList').append(`<li><a href="${posts}&p=${i}"><img alt="${idcd} Part-${i}" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w600-h350-c-rw/thumb.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
+				$('#partList').append(`<li><a href="${posts}&p=${i}"><img alt="${idcd} Part-${i}" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[i]}/w600-h350-c-rw/${idcd}_part-${i}.webp" /><span><i class="fa-solid fa-pizza-slice"></i> Part  ${i} </span></a></li>`);
 			}
 
 			if (!part) {
