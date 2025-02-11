@@ -140,7 +140,7 @@ if (vValue) {
 					    "url": `${url}${posts}&p=${(i+1)}`,
 					    "identifier": `${idcd}~SUB-${data.alp.s}&p=${(i+1)}`,
 					    "description": title,
-					    "image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[(i+1)]}/s1600-rw/${idcd}.webp`,
+					    "image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[(i+1)]}/s1600-rw/${idcd}_part-${(i+1)}.webp`,
 					    "partOfSeries": {
 						"@type": "CreativeWorkSeries",
 						"name": `${idcd} ${sub}`
@@ -169,25 +169,6 @@ if (vValue) {
 					"@context": "https://schema.org",
 					"@graph": [
 						{
-							"@type": "WebSite",
-							"name": `Watch ${idcd} ${sub} - DriveJAV`,
-							"url": `${url}${posts}`,
-							"description": title,
-							"image": imageContent,
-							"mainEntity": {
-								"@type": "CreativeWork",
-								"name": `Watch ${idcd} Part-${part} ${sub}`,
-								"identifier": `${idcd}~SUB-${data.alp.s}&p=${part}`,
-								"description": title,
-								"url": `${url}${posts}&p=${part}`,
-								"image": imageContent,
-								"partOfSeries": {
-									"@type": "TVSeries",
-									"name": `${idcd} ${sub}`
-								}
-							}
-						},
-						{
 							"@type": "VideoObject",
 							"name": `${idcd} ${sub} Part-${part}`,
 							"description": title,
@@ -212,7 +193,7 @@ if (vValue) {
 						{
 							"@type": "ImageObject",
 							"name": `${idcd} Part-${part}`,
-							"contentUrl": imageContent.replace(/-rw.*/, `-rp/${idcd}_part-${part}.png`),
+							"contentUrl": imageContent.replace(/-rw.*/, `-rw/${idcd}_part-${part}.webp`),
 							"thumbnail": imageContent.replace("/s16","/s6"),
 							"caption": `${idcd} ${sub} - DriveJAV`,
 							"author": {
