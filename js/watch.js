@@ -125,12 +125,28 @@ if (vValue) {
 				// JSON-LD data
 				const jsonLdData = {
 					"@context": "https://schema.org",
-					"@type": "WebSite",
-					"name": `${idcd} ${sub}`,
-					"url": url+posts,
-					"description": title,
-					"image": imageContent					
+					"@type": "CreativeWorkSeries",
+					    "name": `${idcd} ${sub}`,
+					    "url": url+posts,
+					    "image": imageContent,
+					    "description": title,
+					    "hasPart": []				
 				};
+
+				    for (let i = 0; i < data.alp.v.length; i++) {
+					jsonLdData.hasPart.push({
+					    "@type": "CreativeWork",
+					    "name": `${idcd} ${sub} Part-${(i+1)}`,
+					    "url": `${url}${posts}&p=${(i+1)}`,
+					    "identifier": `${idcd}~SUB-${data.alp.s}&p=${(i+1)}`,
+					    "description": title,
+					    "image": `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsE${pictr[(i+1)]}/s1600-rw/${idcd}.webp`,
+					    "partOfSeries": {
+						"@type": "CreativeWorkSeries",
+						"name": `${idcd} ${sub}`
+					    }
+					});
+				    }
 
 				setJsonLd(jsonLdData);
 
