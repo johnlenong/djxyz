@@ -60,7 +60,7 @@ if (vValue) {
 				
 			const canonicalLink = document.createElement("link");
 				canonicalLink.rel = "canonical";
-				canonicalLink.href = `${url}${posts}`; 
+				canonicalLink.href = `${url}watch?v=${idcd}~SUB-${data.alp.s.toUpperCase()}`; 
 			document.head.appendChild(canonicalLink);
 
 			code.innerHTML = `${idcd}`;
